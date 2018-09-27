@@ -1,0 +1,7 @@
+index:
+    path: /
+    controller: App\Controller\MainController::indexAction
+
+newuser:
+    path: /newuser
+    controller: App\Controller\UserController::new
