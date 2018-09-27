@@ -4,11 +4,11 @@
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-<section class="col-xs-12 col-lg-8 col-lg-offset-2 col-md-8 col-col-offset-2 col-xs-12 clearfix">
+<section class="col-xs-12 col-lg-8 col-lg-offset-2 col-md-12 col-xs-12 clearfix">
     <div class="">
         <h2 data-sr="move 16px scale up 80%, over 1s">Connexion</h2>
         <div class="col4 desktop-col3"></div>
-        <div class="col4 desktop-col6">
+        <div class="col-lg-12 col-md-8 col-md-offset-2">
 
             <form action="{{ path("fos_user_security_check") }}" method="post">
                 {% if csrf_token %}
