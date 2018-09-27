@@ -15,9 +15,6 @@ class MainController extends Controller
 {
     public function indexAction(){
         $user = $this->getUser();
-        if(empty($user)){
-            return $this->render('Users/Newusers.html.twig');
-        }
         return $this->render('Main/index.html.twig', array('user' => $user));
     }
 
