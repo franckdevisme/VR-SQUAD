@@ -3,8 +3,16 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+<section id="inscription" class=" clr p0">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mt1 mb5" style="min-height: 90px;">
+        <h1>Bienvenue  <span> sur VR-SQUAD</span></h1>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+    <p class="text-success">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    </div>
     {% if targetUrl %}
     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
     {% endif %}
+</section>
 {% endblock fos_user_content %}

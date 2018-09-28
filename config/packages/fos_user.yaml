@@ -2,6 +2,13 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: App\Entity\User
+    registration:
+           form:
+               type: App\Form\RegistrationType
+    profile:
+            form:
+                type:  App\Form\ProfileType # or 'fos_user_profile' on Symfony < 2.8
+
     from_email:
         address: "vincent@vfac.fr"
         sender_name: "vincent@vfac.fr"

@@ -143,4 +143,220 @@ class Formation
         $this->id = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /**
+     * @return string
+     */
+    public function getIsvalide(): string
+    {
+        return $this->isvalide;
+    }
+
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateDePublication(): \DateTime
+    {
+        return $this->dateDePublication;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateUpdate(): \DateTime
+    {
+        return $this->dateUpdate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getDevicesCompatible(): ?string
+    {
+        return $this->devicesCompatible;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDisplayPourUser(): string
+    {
+        return $this->displayPourUser;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getId(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->id;
+    }
+
+
+
+
+
+    /**
+     * @return int
+     */
+    public function getIdformation(): int
+    {
+        return $this->idformation;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNombreDeLessons(): int
+    {
+        return $this->nombreDeLessons;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNombreDeVue(): int
+    {
+        return $this->nombreDeVue;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNomFormation(): string
+    {
+        return $this->nomFormation;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTags(): string
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVersion(): string
+    {
+        return $this->version;
+    }
+
+    /**
+     * @param \DateTime $dateDePublication
+     */
+    public function setDateDePublication(\DateTime $dateDePublication): void
+    {
+        $this->dateDePublication = $dateDePublication;
+    }
+
+    /**
+     * @param \DateTime $dateUpdate
+     */
+    public function setDateUpdate(\DateTime $dateUpdate): void
+    {
+        $this->dateUpdate = $dateUpdate;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @param null|string $devicesCompatible
+     */
+    public function setDevicesCompatible(?string $devicesCompatible): void
+    {
+        $this->devicesCompatible = $devicesCompatible;
+    }
+
+    /**
+     * @param string $displayPourUser
+     */
+    public function setDisplayPourUser(string $displayPourUser): void
+    {
+        $this->displayPourUser = $displayPourUser;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $id
+     */
+    public function setId(\Doctrine\Common\Collections\Collection $id): void
+    {
+        $this->id = $id;
+    }
+
+
+
+
+    /**
+     * @param int $idformation
+     */
+    public function setIdformation(int $idformation): void
+    {
+        $this->idformation = $idformation;
+    }
+
+    /**
+     * @param string $isvalide
+     */
+    public function setIsvalide(string $isvalide): void
+    {
+        $this->isvalide = $isvalide;
+    }
+
+    /**
+     * @param int $nombreDeLessons
+     */
+    public function setNombreDeLessons(int $nombreDeLessons): void
+    {
+        $this->nombreDeLessons = $nombreDeLessons;
+    }
+
+    /**
+     * @param int $nombreDeVue
+     */
+    public function setNombreDeVue(int $nombreDeVue): void
+    {
+        $this->nombreDeVue = $nombreDeVue;
+    }
+
+    /**
+     * @param string $nomFormation
+     */
+    public function setNomFormation(string $nomFormation): void
+    {
+        $this->nomFormation = $nomFormation;
+    }
+
+    /**
+     * @param string $tags
+     */
+    public function setTags(string $tags): void
+    {
+        $this->tags = $tags;
+    }
+
+    /**
+     * @param string $version
+     */
+    public function setVersion(string $version): void
+    {
+        $this->version = $version;
+    }
+
 }

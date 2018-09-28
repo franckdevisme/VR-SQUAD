@@ -72,4 +72,100 @@ class ContenuFormation
     private $idformation;
 
 
+    /**
+     * @param \Formation $idformation
+     */
+    public function setIdformation(\Formation $idformation): void
+    {
+        $this->idformation = $idformation;
+    }
+
+    /**
+     * @return \Formation
+     */
+    public function getIdformation(): \Formation
+    {
+        return $this->idformation;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdcontenuFormation(): int
+    {
+        return $this->idcontenuFormation;
+    }
+
+    /**
+     * @return \Contenutext
+     */
+    public function getIdcontenutext(): \Contenutext
+    {
+        return $this->idcontenutext;
+    }
+
+    /**
+     * @return \ContenuImg
+     */
+    public function getIdimage(): \ContenuImg
+    {
+        return $this->idimage;
+    }
+
+    /**
+     * @return \Contenutest
+     */
+    public function getIdtest(): \Contenutest
+    {
+        return $this->idtest;
+    }
+
+    /**
+     * @return \ContenuVideo
+     */
+    public function getIdvideo(): \ContenuVideo
+    {
+        return $this->idvideo;
+    }
+
+    /**
+     * @param int $idcontenuFormation
+     */
+    public function setIdcontenuFormation(int $idcontenuFormation): void
+    {
+        $this->idcontenuFormation = $idcontenuFormation;
+    }
+
+    /**
+     * @param \Contenutext $idcontenutext
+     */
+    public function setIdcontenutext(\Contenutext $idcontenutext): void
+    {
+        $this->idcontenutext = $idcontenutext;
+    }
+
+    /**
+     * @param \ContenuImg $idimage
+     */
+    public function setIdimage(\ContenuImg $idimage): void
+    {
+        $this->idimage = $idimage;
+    }
+
+    /**
+     * @param \Contenutest $idtest
+     */
+    public function setIdtest(\Contenutest $idtest): void
+    {
+        $this->idtest = $idtest;
+    }
+
+    /**
+     * @param \ContenuVideo $idvideo
+     */
+    public function setIdvideo(\ContenuVideo $idvideo): void
+    {
+        $this->idvideo = $idvideo;
+    }
+
 }

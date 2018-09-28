@@ -98,8 +98,29 @@ class User extends BaseUser
         return $this->avater;
     }
 
+    public function setNom($nom): void{
+        $this->nom = $nom;
+    }
+
     public function getNom(){
         return $this->nom;
     }
+
+    public function getPrenom(){
+        return $this->prenom;
+    }
+
+    public function setPrenom($prenom): void{
+        $this->prenom = $prenom;
+    }
+
+    public function getPoste(){
+        return $this->poste;
+    }
+
+    public function setPoste($poste): void{
+        $this->poste = $poste;
+    }
+
 
 }
