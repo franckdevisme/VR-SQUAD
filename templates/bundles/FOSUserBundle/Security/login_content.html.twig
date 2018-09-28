@@ -49,21 +49,6 @@
 </section>
 
 
-<script>
-
-
-    var email = document.querySelector('input.login');
-    email.oninvalid = function(e) {
-        e.target.setCustomValidity("");
-        if (!e.target.validity.valid) {
-            if (e.target.value.length == 0) {
-                e.target.setCustomValidity("Ce champ est obligatoire");
-            } else {
-                e.target.setCustomValidity("Veuillez inclure '@' dans l'adresse e-mail. Veuillez inclure '.' dans l'adresse e-mail. Entrez une adresse valide. Exemple : contact@nom.com");
-            }
-        }
-    };
-</script>
 
 
 

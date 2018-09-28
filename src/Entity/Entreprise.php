@@ -78,9 +78,9 @@ class Entreprise
     private $expirationDeLaSouscription;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="isvalide", type="blob", length=65535, nullable=false)
+     * @ORM\Column(name="isvalide", type="integer", nullable=false)
      */
     private $isvalide;
 

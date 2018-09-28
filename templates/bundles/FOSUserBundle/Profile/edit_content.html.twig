@@ -1,8 +1,68 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+
+<section id="formulaire" class="clr  bg-grey">
+    <div class=" container-fluid ">
+        <div class="space2"></div>
+
+        <h2 data-sr="move 16px scale up 80%, over 1s" class="text-center">Bonjour {{ app.user.nom }},</h2>
+        <p class="text-center" data-sr="move 16px scale up 80%, over 1.3s">Bienvenue dans votre espace client !<span></span></p>
+
+        <div class="space1"></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div id="userpath" class="col-lg-10 col-lg-offset-1 p0 ">
+            <header class="col-md-12 p0 bg-gray">
+                <div class="col-lg-3">
+                <div class="btn btn-grey small" style="cursor: pointer;" onclick="location.href= {{ url('index') }}">Retour au tableau de bord</div>
+                </div>
+                <div class="col-lg-9 text-center">
+                <div class=""><h3>Mon profil</h3></div>
+                </div>
+            </header>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 clr bg-white text-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 bg-grey clr">
+                    <form>
+                        <h5 data-sr="move 16px scale up 80%, over 1s">Change votre photo de profile </h5>
+                        <div class="center">
+                            <img src="{{ app.user.avater }}">
+                        </div>
+                        <span class="input input-file">
+                  <label for="file">Personalisez votre photo de profils</label>
+                  <input id="file" name="file" type="file">
+                </span>
+                    </form>
+                </div>
+                <div class="space10 clr"></div>
+                <div class="space10 "></div>
+            </div>
+
+            <div class="col-lg-7 col-lg-offset-1 col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-12 p0  text-left bg-white">
+                <h3 data-sr="move 16px scale up 80%, over 1s">Modifer les informations de votre compte</h3>
+
+                {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+                    <div class="form-group">
+                        <label for="form_username">{{ form_label(form.username)  }}</label>
+                        <input type="text" class="form-control" id="form_username "{{ form_widget(form.username )}}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form_email">{{ form_label(form.email)  }}</label>
+                        <input type="text" class="form-control" id="form_email "{{ form_widget(form.email )}}
+                    </div>
+                    <div class="form-group">
+                        <label for="form_password"> {{ form_label(form.current_password)  }}</label>
+                        <input type="password" class="form-control" id="form_password " {{ form_widget(form.current_password)  }}
+                    </div>
+
+                <div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix" style="margin-bottom: 2%;">
+                    <input type="submit" class="btn btn-primary" value="{{ 'profile.edit.submit'|trans }}" />
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+
     </div>
-{{ form_end(form) }}
+</section>
+
+
