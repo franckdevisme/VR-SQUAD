@@ -35,5 +35,84 @@ class ContenuImg
      */
     private $urlImage;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Formation", mappedBy="contenuImg")
+     */
+    private $formation;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->formation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdcontenuImg(): int
+    {
+        return $this->idcontenuImg;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNameImage(): string
+    {
+        return $this->nameImage;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getUrlImage(): ?string
+    {
+        return $this->urlImage;
+    }
+
+    /**
+     * @param int $idcontenuImg
+     */
+    public function setIdcontenuImg(int $idcontenuImg): void
+    {
+        $this->idcontenuImg = $idcontenuImg;
+    }
+
+    /**
+     * @param string $nameImage
+     */
+    public function setNameImage(string $nameImage): void
+    {
+        $this->nameImage = $nameImage;
+    }
+
+    /**
+     * @param string $urlImage
+     */
+    public function setUrlImage(string $urlImage): void
+    {
+        $this->urlImage = $urlImage;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormation(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->formation;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $formation
+     */
+    public function setFormation(\Doctrine\Common\Collections\Collection $formation): void
+    {
+        $this->formation = $formation;
+    }
+
 
 }

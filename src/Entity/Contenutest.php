@@ -42,5 +42,19 @@ class Contenutest
      */
     private $test;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Formation", mappedBy="contenutest")
+     */
+    private $formation;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->formation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 }

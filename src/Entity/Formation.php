@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Formation
  *
- * @ORM\Table(name="formation", indexes={@ORM\Index(name="fk_formation_Entreprise1_idx", columns={"idEntreprise"}), @ORM\Index(name="fk_formation_categorie1_idx", columns={"idcategorie"}), @ORM\Index(name="fk_formation_auteur1_idx", columns={"idauteur"})})
+ * @ORM\Table(name="formation", indexes={@ORM\Index(name="fk_formation_Entreprise1_idx", columns={"idEntreprise"}), @ORM\Index(name="fk_formation_categorie1_idx", columns={"idcategorie"})})
  * @ORM\Entity
  */
 class Formation
@@ -85,16 +85,16 @@ class Formation
     private $devicesCompatible;
 
     /**
-     * @var string
+     * @var bool
      *
-     * @ORM\Column(name="display_pour_user", type="blob", length=65535, nullable=false)
+     * @ORM\Column(name="display_pour_user", type="boolean", nullable=false)
      */
     private $displayPourUser;
 
     /**
-     * @var string
+     * @var bool
      *
-     * @ORM\Column(name="isvalide", type="blob", length=65535, nullable=false)
+     * @ORM\Column(name="isvalide", type="boolean", nullable=false)
      */
     private $isvalide;
 
@@ -109,16 +109,6 @@ class Formation
     private $identreprise;
 
     /**
-     * @var \Auteur
-     *
-     * @ORM\ManyToOne(targetEntity="Auteur")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idauteur", referencedColumnName="idauteur")
-     * })
-     */
-    private $idauteur;
-
-    /**
      * @var \Categorie
      *
      * @ORM\ManyToOne(targetEntity="Categorie")
@@ -127,6 +117,66 @@ class Formation
      * })
      */
     private $idcategorie;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="ContenuImg", inversedBy="formation")
+     * @ORM\JoinTable(name="formation_has_contenu_img",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="formation", referencedColumnName="idformation")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="contenu_img", referencedColumnName="idcontenu_img")
+     *   }
+     * )
+     */
+    private $contenuImg;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="ContenuVideo", inversedBy="formation")
+     * @ORM\JoinTable(name="formation_has_contenu_video",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="formation", referencedColumnName="idformation")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="contenuvideo", referencedColumnName="idvideo")
+     *   }
+     * )
+     */
+    private $contenuvideo;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Contenutest", inversedBy="formation")
+     * @ORM\JoinTable(name="formation_has_contenutest",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="formation", referencedColumnName="idformation")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="contenutest", referencedColumnName="idtest")
+     *   }
+     * )
+     */
+    private $contenutest;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Contenutext", inversedBy="formation")
+     * @ORM\JoinTable(name="formation_has_contenutext",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="formation", referencedColumnName="idformation")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="contenutext", referencedColumnName="idContenutext")
+     *   }
+     * )
+     */
+    private $contenutext;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -140,17 +190,108 @@ class Formation
      */
     public function __construct()
     {
+        $this->contenuImg = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->contenuvideo = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->contenutest = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->contenutext = new \Doctrine\Common\Collections\ArrayCollection();
         $this->id = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * @return \Entreprise
+     */
+    public function getIdentreprise(): \Entreprise
+    {
+        return $this->identreprise;
+    }
+
+    /**
+     * @param \Entreprise $identreprise
+     */
+    public function setIdentreprise(\Entreprise $identreprise): void
+    {
+        $this->identreprise = $identreprise;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getId(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $id
+     */
+    public function setId(\Doctrine\Common\Collections\Collection $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param int $idformation
+     */
+    public function setIdformation(int $idformation): void
+    {
+        $this->idformation = $idformation;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdformation(): int
+    {
+        return $this->idformation;
+    }
+
+    /**
+     * @param \Categorie $idcategorie
+     */
+    public function setIdcategorie(\Categorie $idcategorie): void
+    {
+        $this->idcategorie = $idcategorie;
+    }
+
+    /**
+     * @return \Categorie
+     */
+    public function getIdcategorie(): \Categorie
+    {
+        return $this->idcategorie;
     }
 
     /**
      * @return string
      */
-    public function getIsvalide(): string
+    public function getDescription(): string
     {
-        return $this->isvalide;
+        return $this->description;
     }
 
+    /**
+     * @return string
+     */
+    public function getTags(): string
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @param string $tags
+     */
+    public function setTags(string $tags): void
+    {
+        $this->tags = $tags;
+    }
 
     /**
      * @return \DateTime
@@ -169,47 +310,11 @@ class Formation
     }
 
     /**
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
      * @return null|string
      */
     public function getDevicesCompatible(): ?string
     {
         return $this->devicesCompatible;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDisplayPourUser(): string
-    {
-        return $this->displayPourUser;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getId(): \Doctrine\Common\Collections\Collection
-    {
-        return $this->id;
-    }
-
-
-
-
-
-    /**
-     * @return int
-     */
-    public function getIdformation(): int
-    {
-        return $this->idformation;
     }
 
     /**
@@ -239,14 +344,6 @@ class Formation
     /**
      * @return string
      */
-    public function getTags(): string
-    {
-        return $this->tags;
-    }
-
-    /**
-     * @return string
-     */
     public function getVersion(): string
     {
         return $this->version;
@@ -269,14 +366,6 @@ class Formation
     }
 
     /**
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
-    }
-
-    /**
      * @param null|string $devicesCompatible
      */
     public function setDevicesCompatible(?string $devicesCompatible): void
@@ -285,36 +374,17 @@ class Formation
     }
 
     /**
-     * @param string $displayPourUser
+     * @param bool $displayPourUser
      */
-    public function setDisplayPourUser(string $displayPourUser): void
+    public function setDisplayPourUser(bool $displayPourUser): void
     {
         $this->displayPourUser = $displayPourUser;
     }
 
     /**
-     * @param \Doctrine\Common\Collections\Collection $id
+     * @param bool $isvalide
      */
-    public function setId(\Doctrine\Common\Collections\Collection $id): void
-    {
-        $this->id = $id;
-    }
-
-
-
-
-    /**
-     * @param int $idformation
-     */
-    public function setIdformation(int $idformation): void
-    {
-        $this->idformation = $idformation;
-    }
-
-    /**
-     * @param string $isvalide
-     */
-    public function setIsvalide(string $isvalide): void
+    public function setIsvalide(bool $isvalide): void
     {
         $this->isvalide = $isvalide;
     }
@@ -344,19 +414,92 @@ class Formation
     }
 
     /**
-     * @param string $tags
-     */
-    public function setTags(string $tags): void
-    {
-        $this->tags = $tags;
-    }
-
-    /**
      * @param string $version
      */
     public function setVersion(string $version): void
     {
         $this->version = $version;
     }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getContenuImg(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->contenuImg;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getContenutest(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->contenutest;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getContenutext(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->contenutext;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getContenuvideo(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->contenuvideo;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDisplayPourUser(): bool
+    {
+        return $this->displayPourUser;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isIsvalide(): bool
+    {
+        return $this->isvalide;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $contenuImg
+     */
+    public function setContenuImg(\Doctrine\Common\Collections\Collection $contenuImg): void
+    {
+        $this->contenuImg = $contenuImg;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $contenutest
+     */
+    public function setContenutest(\Doctrine\Common\Collections\Collection $contenutest): void
+    {
+        $this->contenutest = $contenutest;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $contenutext
+     */
+    public function setContenutext(\Doctrine\Common\Collections\Collection $contenutext): void
+    {
+        $this->contenutext = $contenutext;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $contenuvideo
+     */
+    public function setContenuvideo(\Doctrine\Common\Collections\Collection $contenuvideo): void
+    {
+        $this->contenuvideo = $contenuvideo;
+    }
+    
 
 }

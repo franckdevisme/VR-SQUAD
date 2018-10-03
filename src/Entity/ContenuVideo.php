@@ -35,5 +35,19 @@ class ContenuVideo
      */
     private $urlVideo;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Formation", mappedBy="contenuvideo")
+     */
+    private $formation;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->formation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 }

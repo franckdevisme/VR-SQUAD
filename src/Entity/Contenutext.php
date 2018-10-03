@@ -35,5 +35,83 @@ class Contenutext
      */
     private $text;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Formation", mappedBy="contenutext")
+     */
+    private $formation;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->formation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $formation
+     */
+    public function setFormation(\Doctrine\Common\Collections\Collection $formation): void
+    {
+        $this->formation = $formation;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormation(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->formation;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdcontenutext(): int
+    {
+        return $this->idcontenutext;
+    }
+
+    /**
+     * @param string $titre
+     */
+    public function setTitre(string $titre): void
+    {
+        $this->titre = $titre;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitre(): string
+    {
+        return $this->titre;
+    }
+
+    /**
+     * @param string $text
+     */
+    public function setText(string $text): void
+    {
+        $this->text = $text;
+    }
+
+    /**
+     * @return string
+     */
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    /**
+     * @param int $idcontenutext
+     */
+    public function setIdcontenutext(int $idcontenutext): void
+    {
+        $this->idcontenutext = $idcontenutext;
+    }
 
 }

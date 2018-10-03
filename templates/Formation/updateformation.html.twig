@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <section>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-capitalize text-center">
+                <h1>  Update  formation </h1>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bg-gray">
+                <form class="form-horizontal" action="{{ url('formationedit') }}" method="post">
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1 mt2">
+                            <div class="col-md-12  mb2 text-left">
+                                <label for="nomformation">Nom de la Foramtion :</label>
+                            </div>
+                            <div class="col-md-12 mb2">
+                                <input type="hidden" name="id" value="{{formation.Idformation }}">
+                                <input type="text" class="form-control" id="nomformation" name="nomformation" value="{{ formation.nomformation }}" required="required"  />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="col-md-12  mb2 text-left">
+                                <label for="description">Description de Formation :</label>
+                            </div>
+                            <div class="col-md-12 mb2">
+                                <textarea class="form-control" id="description" name="description" cols="5" rows="5">{{ formation.description }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="col-md-12  mb2 text-left">
+                                <label for="tags">Tags :</label>
+                            </div>
+                            <div class="col-md-12 mb2">
+                                <input type="text" class="form-control" id="tags" name="tags"  value="{{ formation.tags }}" required="required"  />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="col-md-12  mb2 text-left">
+                                <label for="nombre_de_lessons">Nombre de lessons :</label>
+                            </div>
+                            <div class="col-md-12 mb2">
+                                <input type="number" class="form-control" id="nombre_de_lessons" name="nombre_de_lessons" value="{{ formation.NombreDeLessons }}" required="required"  />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="col-md-12  mb2 text-left">
+                                <label for="version">Version :</label>
+                            </div>
+                            <div class="col-md-12 mb2">
+                                <input type="number" class="form-control" id="version" name="version" value="{{ formation.Version }}" required="required"  />
+                            </div>
+                        </div>
+                    </div>
+                     {% for text in formation.Contenutext %}
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+
+                                <div class="col-md-12  mb2 text-left">
+                                    <label for="	titre">Titre :</label>
+                                </div>
+                                <div class="col-md-12 mb2">
+                                    <input type="hidden" name="idtext" value="{{ text.idcontenutext }}" />
+                                    <input type="text" class="form-control" id="titre" name="titre" value="{{ text.titre }}" required="required"  />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                                <div class="col-md-12  mb2 text-left">
+                                    <label for="Contenu ">Contenu de la formation :</label>
+                                </div>
+                                <div class="col-md-12 mb2">
+                                    <textarea  class="form-control" name="text" cols="5" rows="15"> {{ text.text }} </textarea>
+                                </div>
+                            </div>
+                        </div>
+                         {% else %}
+                             <div class="form-group">
+                                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+
+                                     <div class="col-md-12  mb2 text-left">
+                                         <label for="	titre">Titre :</label>
+                                     </div>
+                                     <div class="col-md-12 mb2">
+                                         <input type="hidden" name="idtext" value="" />
+                                         <input type="text" class="form-control" id="titre" name="titre" value="" required="required"  />
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="form-group">
+                                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                                     <div class="col-md-12  mb2 text-left">
+                                         <label for="Contenu ">Contenu de la formation :</label>
+                                     </div>
+                                     <div class="col-md-12 mb2">
+                                         <textarea  class="form-control" name="text" cols="5" rows="15"> </textarea>
+                                     </div>
+                                 </div>
+                             </div>
+
+                     {% endfor %}
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="col-md-12  mb2 text-left">
+                                <label for="idcategorie">Categorie :</label>
+                            </div>
+                            <div class="col-md-12 mb2">
+                                <select name="idcategorie" class="form-control">
+                                    <option value="1">soft skile</option>
+                                    <option value="1">soft skile</option>
+                                    <option value="1">soft skile</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="col-md-12  mb2 text-center">
+                                <input type="submit" class="btn btn-lg btn-primary" value="Update">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

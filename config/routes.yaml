@@ -5,3 +5,8 @@ index:
 newuser:
     path: /newuser
     controller: App\Controller\UserController::new
+
+
+
+
+

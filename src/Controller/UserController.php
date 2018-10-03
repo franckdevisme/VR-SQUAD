@@ -9,7 +9,7 @@
 namespace App\Controller;
 
 use App\Entity\Entreprise;
-use App\Entity\Users;
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -23,18 +23,12 @@ class UserController extends AbstractController
     {
 
         // creates a user and gives it some dummy data for this example
-        $user = new Users();
-        $user->setUsername('titi');
-        $user->setName('tit');
-        $user->setLastname('titi');
-        $user->setPassword('azerty');
+        $user = new User();
+
         //$user->setIdentreprise(Entreprise(1));
 
         $form = $this->createFormBuilder($user)
             ->add('Username', TextType::class)
-            ->add('Name', TextType::class)
-            ->add('Lastname', TextType::class)
-            ->add('Password', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Create Task'))
             ->getForm();
 
