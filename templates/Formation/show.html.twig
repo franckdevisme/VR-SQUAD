@@ -39,13 +39,11 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-
                     {% for key, text in  formation.Contenutext %}
                         <h3 class="text-capitalize">{{ text.titre }}  </h3>
                         <br>
                         <p class="text-justify">{{ text.text }}</p>
                     {% endfor %}
-
                 </div>
 
 
@@ -56,10 +54,14 @@
                 <a class="btn btn-primary btn-lg" href="{{ path('formation_index') }}">back to list</a>
                 </div>
                 <div class="col-md-2">
+                    {% if app.user %}
                 <a class="btn btn-primary btn-lg" href="{{ path('formation_edit', {'idformation': formation.idformation}) }}">Modification</a>
+                    {% endif %}
                 </div>
                 <div class="col-md-2 ">
+                    {% if app.user %}
                 {{ include('formation/_delete_form.html.twig') }}
+                    {% endif %}
                 </div>
             </div>
         </section>

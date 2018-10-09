@@ -1,12 +1,12 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<section id="inscription" class=" clr p0">
+
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mt1 mb5" style="min-height: 90px;">
         <h1>Bienvenue  <span> sur VR-SQUAD</span></h1>
     </div>
 
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 mb5 bg-white">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 mb5 bg-white">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mb2">
             <h3 >Vous n'avez pas de compte ?
                 <br><span>Inscrivez-vous en complétant le formulaire ci dessous</span> </h3>
@@ -17,35 +17,42 @@
         <div class="form-group">
             {{ form_label(form.nom, 'Nom :', {'label_attr': {'class': 'label'}}) }}
             {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.nom) }}
         </div>
         <div class="form-group">
         {{ form_label(form.prenom, 'Prénom :', {'label_attr': {'class': 'label'}}) }}
         {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.prenom) }}
         </div>
 
         <div class="form-group">
             {{ form_label(form.poste, 'Fonction  :', {'label_attr': {'class': 'label'}}) }}
             {{ form_widget(form.poste, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.poste) }}
         </div>
 
         <div class="form-group">
             {{ form_label(form.email,'Adress email:', {'label_attr': {'class': 'label'}}) }}
             {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.email) }}
         </div>
 
         <div class="form-group">
         {{ form_label(form.username, 'Nom d\'utilisateur :', {'label_attr': {'class': 'label'}}) }}
         {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.username) }}
         </div>
 
         <div class="form-group">
             {{ form_label(form.plainPassword.first, 'Mot de passe:', {'label_attr': {'class': 'label'}}) }}
             {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.plainPassword.first) }}
         </div>
 
         <div class="form-group">
             {{ form_label(form.plainPassword.second, 'Répéter le mot de passe :', {'label_attr': {'class': 'label'}}) }}
             {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.plainPassword.second) }}
         </div>
     <div class="text-center ">
         <input type="submit" class="btn btn-primary btn-lg" value="{{ 'registration.submit'|trans }}" />
@@ -53,101 +60,9 @@
 {{ form_end(form) }}
     </div>
     </div>
-</section>
 
 
-<!-- le form personlizé pour créer un nouveau client dans la basse --><!--
-<section id="inscription" class="bg-grey clr p0">
-    <div class="container clr">
-        <div class="space1"></div>
-        <h3 data-sr="move 16px scale up 80%, over 1s"><img src="{{ asset('bundles/nexity/images/titre-connexion.png')}}" alt="Connexion" />Vous n'avez pas de compte ? <span>Inscrivez-vous en complétant le formulaire ci dessous</span> </h3>
-        <div class="notablet col2"></div>
-        <div  class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-            <form   method="post" action="{{ path('fos_user_registration_register') }}"  class="fos_user_registration_register" enctype="multipart/form-data">
-                <fieldset>
-                    <input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" value="LSm2B2or714ac_rHFU9GANKmvuheVDwUjiiHF_iklv4">
-                    <p>
-                        <label for="fos_user_registration_form_nom">Nom : </label>
-                        <span  {% if form_errors(form.nom) %} class="input error"{% else %} class="input" > {% endif %}
-                            <input type="text" id="fos_user_registration_form_nom" name="fos_user_registration_form[nom]" required="required" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)" >
-                        </span>
 
-                        {% if form_errors(form.nom) %}
-                            <span class="msg">
-                              <span class="error">{{ form_errors(form.nom) }}</span>
-                            </span>
-                        {% endif %}
-                    </p>
-                    <p><label for="fos_user_registration_form_prenom">Prénom : </label>
-                        <span  {% if form_errors(form.prenom) %} class= "input error"{% else %} class="input "> {% endif %}
-                            <input type="text" id="fos_user_registration_form_prenom" name="fos_user_registration_form[prenom]" required="required" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)">
-                        </span>
-                        {% if form_errors(form.prenom) %}
-                            <span class="msg">
-                              <span class="error">{{ form_errors(form.prenom) }}</span>
-                            </span>
-                        {% endif %}
-                    </p>
-
-
-                    <p><label for="fos_user_registration_form_poste">Fonction : </label>
-                        <span  {% if form_errors(form.poste) %} class="input error"{% else %}class= "input" {% endif %}>
-                        <input type="text" id="fos_user_registration_form_poste" name="fos_user_registration_form[poste]" required="required" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)">
-                        </span>
-                    </p>
-
-                    <p><label for="fos_user_registration_form_email">Email : </label>
-                        <span  {% if form_errors(form.email) %} class="input error"{% else %}class="input" {% endif %}>
-                        <input type="email" id="fos_user_registration_form_email" name="fos_user_registration_form[email]" required="required" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)">
-                        </span>
-                        {% if form_errors(form.email) %}
-                            <span class="msg">
-                              <span class="error">{{ form_errors(form.email) }}</span>
-                            </span>
-                        {% endif %}
-                    </p>
-
-                    <p><label for="fos_user_registration_form_username">Nom d'utilisateur : </label>
-                        <span  {% if form_errors(form.username) %} class="input error"{% else %} class="input" {% endif %} >
-                        <input type="mail" id="fos_user_registration_form_username" name="fos_user_registration_form[username]" required="required" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)">
-                        </span>
-                        {% if form_errors(form.username) %}
-                            <span class="msg">
-                              <span class="error">{{ form_errors(form.username) }}</span>
-                            </span>
-                        {% endif %}
-                    </p>
-
-                    <p><label for="fos_user_registration_form_plainPassword_first">Mot de passe : </label>
-                        <span  {% if form_errors(form.plainPassword.first) %}class="input error"{% else %}class="input" {% endif %}>
-                        <input type="password" id="fos_user_registration_form_plainPassword_first" name="fos_user_registration_form[plainPassword][first]" required="required" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"/>
-                        </span>
-                        {% if form_errors(form.plainPassword.first) %}
-                            <span class="msg">
-                              <span class="error">{{form_errors(form.plainPassword.first) }}</span>
-                            </span>
-                        {% endif %}
-                    </p>
-
-                    <p><label for="fos_user_registration_form_plainPassword_second">Répéter le mot de passe : </label>
-                        <span  {% if form_errors(form.plainPassword.second) %} class="input error"{% else %} class="input" {% endif %}>
-                        <input type="Password" id="fos_user_registration_form_plainPassword_second" name="fos_user_registration_form[plainPassword][second]" required ="required" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)" />
-                        </span>
-                        {% if form_errors(form.plainPassword.second) %}
-                            <span class="msg">
-                              <span class="error">{{ form_errors(form.plainPassword.second) }}</span>
-                            </span>
-                        {% endif %}
-                    </p>
-                    <p>
-                        <input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" value="ekU4mar6BU97S2VmKlUOEMhiBQuKR5sziFg8kXTzOic">
-                        <input class="floatright" type="submit" id="_submit" name="_submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
-                    </p>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-</section>-->
 
 
 

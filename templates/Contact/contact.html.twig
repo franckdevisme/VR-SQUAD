@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container clearfix">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center ">
+        <h1> Bienvenue sur X Learn  </h1>
+        </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bg-white">
+          <form id="contact-form" class="mt2 mb2" method="post" action="" role="form">
+            <div class="messages"></div>
+            <div class="controls">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_name">Nom *</label>
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Votre nom *" required="required" data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_lastname">Prénom *</label>
+                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Votre prénom *" required="required" data-error="Lastname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Votre email *" required="required" data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_need">Préciser votre besion *</label>
+                            <select id="form_need" name="need" class="form-control" required="required" data-error="Merci de préciser votre besion.">
+                                <option value="Request quotation">Request quotation</option>
+                                <option value="Request order status">Request order status</option>
+                                <option value="Request copy of an invoice">Request copy of an invoice</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_message">Message *</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Laisse nous un message *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 center-block text-center">
+                        <input type="submit" class="btn btn-primary btn-lg btn-send" value="Valide" >
+                    </div>
+                </div>
+            </div>
+          </form>
+
+      </div>
+    </div>
+{% endblock %}

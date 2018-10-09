@@ -21,17 +21,16 @@ class MainController extends Controller
         $repository = $this->getDoctrine()->getRepository(Formation::class);
         // query for a single Product by its primary key (usually "id")
         $formations = $repository->findall();
-
-
-
-
-
-
         
         return $this->render('Main/index.html.twig', array('formations' => $formations ));
 
         //return $this->redirectToRoute('fos_user_security_login');
     }
+
+    public function Contact(){
+        return $this->render('Contact/contact.html.twig');
+    }
+
 
     // permettra d'afficher le menu sur toutes les pages
     public function menuAction()

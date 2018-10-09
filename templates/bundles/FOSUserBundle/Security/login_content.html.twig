@@ -4,16 +4,11 @@
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-<section>
-
-
-    <div class="container">
-        <div class="col-lg-12  col-md-12 col-sm-12 col-xs-12" style="min-height: 90px"></div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mb5">
-                <h1>Bienvenue  <span> sur VR-SQUAD</span></h1>
-            </div>
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-xs-12 bg-white">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mb5">
+                    <h1>Bienvenue  <span> sur VR-SQUAD</span></h1>
+                </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12 bg-white">
                 <form class="bg-white" action="{{ path("fos_user_security_check") }}" method="post">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mb15">
                     <h1>
@@ -25,8 +20,8 @@
                     {% if csrf_token %}
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                     {% endif %}
-                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                        <div class="col-md-12  mb2 text-left">
+                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12  mb2 text-left">
                             <label for="username">{{ 'security.login.username'|trans }} :</label>
                         </div>
                         <div class="col-md-12 mb2">
@@ -36,11 +31,11 @@
                 </div>
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mb2">
-                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                        <div class="col-md-12  mb2 text-left">
+                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                        <div class="col-md-12  col-sm-12 col-xs-12 mb2 text-left">
                             <label for="password">{{ 'security.login.password'|trans }} :</label>
                         </div>
-                        <div class="col-md-12 mb2">
+                        <div class="col-md-12 col-sm-12 col-xs-12 mb2">
                             <input type="password" id="password" class="form-control" name="_password" required="required" autocomplete="current-password" />
                         </div>
                     </div>
@@ -61,8 +56,8 @@
 
             </form>
 
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 mb2">
-                    <div class="text-right">
+                <div class="col-lg-12 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 mb2">
+                    <div class="text-center">
                         <a  href="{{ url('fos_user_resetting_request') }}">Mot de passe oublié ?</a>
 
                     </div>
@@ -76,8 +71,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+
 
 
 
