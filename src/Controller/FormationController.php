@@ -25,7 +25,7 @@ class FormationController extends AbstractController
             ->getRepository(Formation::class)
             ->findAll();
 
-        return $this->render('formation/index.html.twig', ['formations' => $formations]);
+        return $this->render('Formation/index.html.twig', ['formations' => $formations]);
     }
 
     /**
@@ -34,7 +34,7 @@ class FormationController extends AbstractController
     public function new(Request $request): Response
     {
 
-        return $this->render('formation/new.html.twig');
+        return $this->render('Formation/new.html.twig');
     }
 
     /**
@@ -79,7 +79,7 @@ class FormationController extends AbstractController
      */
     public function show(Formation $formation): Response
     {
-        return $this->render('formation/show.html.twig', ['formation' => $formation]);
+        return $this->render('Formation/show.html.twig', ['formation' => $formation]);
     }
 
     /**
@@ -96,7 +96,7 @@ class FormationController extends AbstractController
             return $this->redirectToRoute('formation_edit', ['idformation' => $formation->getIdformation()]);
         }*/
 
-        return $this->render('formation/updateformation.html.twig', [
+        return $this->render('Formation/updateformation.html.twig', [
             'formation' => $formation,
         ]);
     }

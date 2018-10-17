@@ -34,7 +34,7 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">Bonjour {{ app.user.nom }} <img src="{{ app.user.avater }}" class="img-responsive img-thumbnail" width="26"></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Mon Tableau de bord</a></li>
+                        <li><a href="{{ url('mon_deshboards') }}">Mon Tableau de bord</a></li>
                         <li  {% if activeRoute == 'fos_user_profile_edit' %} class="active" {% endif %}><a href="{{ url('fos_user_profile_edit') }}">Mon Profile</a></li>
                         <li><a href="">Mes Rendez Vous</a></li>
                         <li class="divider"></li>
