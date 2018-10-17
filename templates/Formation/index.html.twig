@@ -5,9 +5,8 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
         </div>
 
-        <section id="inscription" class="bg-grey clr p0">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb2">
 
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb2">
                 <h4>Catégorie : <span>Soft</span></h4>
                 </div>
                 {% for key, formation in formations %}
@@ -26,6 +25,10 @@
                         </div>
                     </div>
                 {% endfor %}
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 endcat text-center">
+        <p> . . .</p>
+    </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb2 mt2">
 
@@ -47,8 +50,10 @@
                 </div>
             {% endfor %}
 
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 endcat text-center">
+            <p> . . .</p>
+        </div>
+
             </div>
-        </section>
-    </div>
 
 {% endblock %}

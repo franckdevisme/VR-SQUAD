@@ -101,3 +101,10 @@
     border-top:1px dotted #bbb;
     padding:10px;
 }
+
+.endcat{
+    height: 7px;
+    border-top: 2px solid black ;
+    border-bottom: 2px solid black;
+    margin-top: 2%;
+}
