@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ba24c5-358a-4e31-bd69-cd288d679b20" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/FormationController.php" afterPath="$PROJECT_DIR$/src/Controller/FormationController.php" />
-      <change beforePath="$PROJECT_DIR$/templates/Main/meun.html.twig" afterPath="$PROJECT_DIR$/templates/Main/meun.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/Formation/index.html.twig" afterPath="$PROJECT_DIR$/templates/Formation/index.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -107,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="meun.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="meun.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Main/meun.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
@@ -117,11 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/Formation/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="8" column="65" lean-forward="false" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -222,13 +221,13 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Controller/MainController.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/templates/Formation/index.html.twig" />
         <option value="$PROJECT_DIR$/public/css/deshboard.css" />
         <option value="$PROJECT_DIR$/config/packages/cmen_google_charts.yaml" />
         <option value="$PROJECT_DIR$/templates/User/Dashboarduser.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/src/Controller/FormationController.php" />
         <option value="$PROJECT_DIR$/templates/Main/meun.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Formation/index.html.twig" />
       </list>
     </option>
   </component>
@@ -396,6 +395,12 @@
               <item name="vr_squad" type="b2602c69:ProjectViewProjectNode" />
               <item name="vr_squad" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Formation" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="vr_squad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vr_squad" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Main" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -463,12 +468,12 @@
       <workItem from="1538985976502" duration="13062000" />
       <workItem from="1539245885640" duration="41000" />
       <workItem from="1539249094077" duration="645000" />
-      <workItem from="1539763851402" duration="16362000" />
+      <workItem from="1539763851402" duration="17014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160606000" />
+    <option name="totallyTimeSpent" value="161258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -747,14 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Formation/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/deshboard.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
@@ -816,6 +813,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="36" column="59" lean-forward="false" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Formation/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="65" lean-forward="false" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
           <folding />
         </state>
       </provider>
