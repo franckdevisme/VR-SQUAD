@@ -21,6 +21,7 @@ class MainController extends Controller
         $repository = $this->getDoctrine()->getRepository(Formation::class);
         // query for a single Product by its primary key (usually "id")
         $formations = $repository->findall();
+
         
         return $this->render('Main/index.html.twig', array('formations' => $formations ));
 
@@ -33,7 +34,7 @@ class MainController extends Controller
 
 
     // permettra d'afficher le menu sur toutes les pages
-    public function menuAction()
+    public function menu()
     {
         $requestStack =$this->get('request_stack');
         $maseterResquest = $requestStack->getMasterRequest();
@@ -42,7 +43,7 @@ class MainController extends Controller
         {
             $route = $maseterResquest->attributes->get( '_route');
         }
-        return $this->render( 'Mai/menu.html.twig',array('activeRoute' => $route ) );
+        return $this->render( 'Main/meun.html.twig',array('activeRoute' => $route ) );
     }
 
 }

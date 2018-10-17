@@ -1,0 +1,187 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container-fluid">
+       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb2">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bg-white">
+               <fieldset>
+                    <legend>Formations en coures </legend>
+                <div class="col-md-12 formationcours">
+                    {% for key, formation in formations %}
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left mb2" >
+                            <div class="col-md-12 text-center">
+                                {% for key, img in (formation.contenuImg) %}
+                                    {% if key == 0 %}
+                                        <div class="col-md-6">
+                                            <img class="img-responsive" src="{{img.urlImage }}"></div>
+                                    {% endif %}
+                                {% endfor %}
+                                <h4 class=" text-left text-capitalize"> {{ formation.nomformation }} </h4>
+                                <p class="text-left"> {{ formation.description }}   <a href="{{ path('formation_show', {'idformation': formation.idformation}) }}" > En savoir plus </a></p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+
+                </fieldset>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div id="div_chart"></div>
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    {{ gc_draw(piechart, 'div_chart') }}
+                </script>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bg-white" >
+                <fieldset>
+                    <legend>Mes rendez vous avec le coach </legend>
+                    <div class="col-md-12 formationcours">
+                    {% for key, formation in formations %}
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left mb2" >
+                            <div class="col-md-12 text-center">
+                                {% for key, img in (formation.contenuImg) %}
+                                    {% if key == 0 %}
+                                        <div class="col-md-6">
+                                            <img class="img-responsive" src="{{img.urlImage }}"></div>
+                                    {% endif %}
+                                {% endfor %}
+                                <h4 class=" text-left text-capitalize"> {{ formation.nomformation }} </h4>
+                                <p class="text-left"> {{ formation.description }}   <a href="{{ path('formation_show', {'idformation': formation.idformation}) }}" > En savoir plus </a></p>
+                                <p class="text-left"> Date et Heur : 12/10/2018</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                    </div>
+                </fieldset>
+
+            </div>
+        </div>
+
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt2 mb2">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bg-white">
+                <fieldset>
+                    <legend>Formation Terminé </legend>
+                    <div class="col-md-12 formationcours">
+                    {% for key, formation in formations %}
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left mb2" >
+                            <div class="col-md-12 text-center">
+                                {% for key, img in (formation.contenuImg) %}
+                                    {% if key == 0 %}
+                                        <div class="col-md-6">
+                                            <img class="img-responsive" src="{{img.urlImage }}"></div>
+                                    {% endif %}
+                                {% endfor %}
+                                <h4 class=" text-left text-capitalize"> {{ formation.nomformation }} </h4>
+                                <p class="text-left"> {{ formation.description }}   <a href="{{ path('formation_show', {'idformation': formation.idformation}) }}" > En savoir plus </a></p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div id="div_chart2"></div>
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    {{ gc_draw(AreaChart, 'div_chart2') }}
+                </script>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  bg-white" >
+                <fieldset>
+                    <legend>Formation a faire </legend>
+                    <div class="col-md-12 formationcours">
+                    {% for key, formation in formations %}
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left mb2" >
+                            <div class="col-md-12 text-center">
+                                {% for key, img in (formation.contenuImg) %}
+                                    {% if key == 0 %}
+                                        <div class="col-md-6">
+                                            <img class="img-responsive" src="{{img.urlImage }}"></div>
+                                    {% endif %}
+                                {% endfor %}
+                                <h4 class=" text-left text-capitalize"> {{ formation.nomformation }} </h4>
+                                <p class="text-left"> {{ formation.description }}   <a href="{{ path('formation_show', {'idformation': formation.idformation}) }}" > En savoir plus </a></p>
+                                <p class="text-left"> Date et Heur : 12/10/2018</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt2">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bg-white">
+                <fieldset>
+                    <legend>Mes rendez vous termine avec le coach </legend>
+                    <div class="col-md-12 formationcours">
+                    {% for key, formation in formations %}
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left mb2" >
+                            <div class="col-md-12 text-center">
+                                {% for key, img in (formation.contenuImg) %}
+                                    {% if key == 0 %}
+                                        <div class="col-md-6">
+                                            <img class="img-responsive" src="{{img.urlImage }}"></div>
+                                    {% endif %}
+                                {% endfor %}
+                                <h4 class=" text-left text-capitalize"> {{ formation.nomformation }} </h4>
+                                <p class="text-left"> Date et heur : 11/10/2018 à 11h </p>
+                                <p class="text-left"> {{ formation.description }}   <a href="{{ path('formation_show', {'idformation': formation.idformation}) }}" > En savoir plus </a></p>
+                                <input type="button" value="Voir le retoure du coach"/>
+
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                    </div>
+                </fieldset>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <fieldset>
+                    <legend class="text-left"> </legend>
+
+
+
+                </fieldset>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bg-white" >
+                <fieldset>
+                    <legend>Invite En attend </legend>
+                    <div class="col-md-12 formationcours">
+                    {% for key, formation in formations %}
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left mb2" >
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                                    <img src="{{ app.user.avater }}" class="img-responsive" width="50">
+                            </div>
+                            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-8">
+                                Je vous invite a suivi la Formation #1 pour acrire les competence tel que soft skil <br>
+                                cordialement
+                            </div>
+
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+
+                            </div>
+
+
+
+                        </div>
+
+                    {% endfor %}
+                    </div>
+                </fieldset>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
