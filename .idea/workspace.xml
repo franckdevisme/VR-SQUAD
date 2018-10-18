@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ba24c5-358a-4e31-bd69-cd288d679b20" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change beforePath="$PROJECT_DIR$/templates/Formation/index.html.twig" afterPath="$PROJECT_DIR$/templates/Formation/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/Main/meun.html.twig" afterPath="$PROJECT_DIR$/templates/Main/meun.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,17 +96,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="meun.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="meun.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/Main/meun.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="36" column="59" lean-forward="false" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+            <state relative-caret-position="285">
+              <caret line="34" column="105" lean-forward="false" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Formation/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="93">
@@ -226,9 +225,9 @@
         <option value="$PROJECT_DIR$/templates/User/Dashboarduser.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/src/Controller/FormationController.php" />
-        <option value="$PROJECT_DIR$/templates/Main/meun.html.twig" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/templates/Formation/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Main/meun.html.twig" />
       </list>
     </option>
   </component>
@@ -469,12 +468,12 @@
       <workItem from="1538985976502" duration="13062000" />
       <workItem from="1539245885640" duration="41000" />
       <workItem from="1539249094077" duration="645000" />
-      <workItem from="1539763851402" duration="19307000" />
+      <workItem from="1539763851402" duration="21100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163551000" />
+    <option name="totallyTimeSpent" value="165344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -788,14 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Main/meun.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="36" column="59" lean-forward="false" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Formation/detailForamtion.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -824,6 +815,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="28" column="74" lean-forward="false" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Main/meun.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="34" column="105" lean-forward="false" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
           <folding />
         </state>
       </provider>
