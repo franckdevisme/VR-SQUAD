@@ -24,6 +24,7 @@ class RegistrationType extends AbstractType
             ->add('prenom', TextType::class, array('label' => 'Prénom :'))
             ->add('poste', TextType::class, array('label' => 'Fonction :'));
 
+
     }
 
     public function getParent()
