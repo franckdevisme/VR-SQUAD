@@ -16,7 +16,7 @@
         <ul class="nav navbar-nav">
             <li {% if activeRoute == 'formation_index' %} class="active" {% endif %}><a href="{{ url('formation_index') }}">Nos Formations</a></li>
             {%  if app.user %}<li> <a href="#"> Mes Formations</a> </li>{% endif %}
-            {%  if app.user %}<li  {% if activeRoute == 'formation_new' %} class="active" {% endif %}> <a href="{{ url('formation_new') }}">Créer une Formation</a> </li>{% endif %}
+            {%  if app.user %} {% if is_granted('ROLE_FORMATEUR') %}<li  {% if activeRoute == 'formation_new' %} class="active" {% endif %}> <a href="{{ url('formation_new') }}">Créer une Formation</a> </li>{% endif %}{% endif %}
             <li><a href="#">About</a></li>
             <li  {% if activeRoute == 'contact' %} class="active" {% endif %}><a href="{{ url('contact') }}">Contact</a></li>
 
