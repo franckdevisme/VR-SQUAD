@@ -3,12 +3,20 @@ fos_user:
     firewall_name: main
     user_class: App\Entity\User
     registration:
-           form:
-               type: App\Form\RegistrationType
+           confirmation:
+                       enabled:    true
+                       template:   '@FOSUser/Registration/email.txt.twig'
+
     profile:
             form:
                 type:  App\Form\ProfileType # or 'fos_user_profile' on Symfony < 2.8
 
     from_email:
-        address: "vincent@vfac.fr"
-        sender_name: "vincent@vfac.fr"
+        address: "vrsquadgit@gmail.com"
+        sender_name: "VRsquad"
+    service:
+            mailer:               fos_user.mailer.default
+            email_canonicalizer:  fos_user.util.canonicalizer.default
+            token_generator:      fos_user.util.token_generator.default
+            username_canonicalizer:  fos_user.util.canonicalizer.default
+            user_manager:         fos_user.user_manager.default

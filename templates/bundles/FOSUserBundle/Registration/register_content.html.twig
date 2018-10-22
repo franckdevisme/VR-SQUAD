@@ -15,23 +15,6 @@
         <div class="col-lg-10 col-md-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
         <div class="form-group">
-            {{ form_label(form.nom, 'Nom :', {'label_attr': {'class': 'label'}}) }}
-            {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(form.nom) }}
-        </div>
-        <div class="form-group">
-        {{ form_label(form.prenom, 'Prénom :', {'label_attr': {'class': 'label'}}) }}
-        {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(form.prenom) }}
-        </div>
-
-        <div class="form-group">
-            {{ form_label(form.poste, 'Fonction  :', {'label_attr': {'class': 'label'}}) }}
-            {{ form_widget(form.poste, {'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(form.poste) }}
-        </div>
-
-        <div class="form-group">
             {{ form_label(form.email,'Adress email:', {'label_attr': {'class': 'label'}}) }}
             {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(form.email) }}
@@ -54,7 +37,7 @@
             {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(form.plainPassword.second) }}
         </div>
-    <div class="text-center ">
+    <div class="text-center mb2">
         <input type="submit" class="btn btn-primary btn-lg" value="{{ 'registration.submit'|trans }}" />
     </div>
 {{ form_end(form) }}

@@ -23,6 +23,11 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
+                remember_me:  true
+                always_use_default_target_path : true
+                default_target_path: /mon_deshboards
+                use_referer : true
+
             logout:       true
             anonymous:    true
 
