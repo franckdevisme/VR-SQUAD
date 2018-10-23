@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 use CMEN\GoogleChartsBundle\GoogleCharts\Options\Histogram\Histogram;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -63,6 +64,44 @@ class UserController extends Controller
         return $this->render('User/Dashboarduser.html.twig', array('formations' => $formations, 'piechart' => $pieChart, 'AreaChart' => $are ));
 
         //return $this->redirectToRoute('fos_user_security_login');
+    }
+
+
+    /**
+     * @Route("/user_deshboards", name="mon_tablo_bord", methods="GET")
+     */
+    public function tabloAction(){
+
+        $formations = $this->getDoctrine()
+            ->getRepository(Formation::class)
+            ->findAll();
+
+        return $this->render('User/index.html.twig', array('formations' => $formations));
+
+        //return $this->redirectToRoute('fos_user_security_login');
+    }
+
+    /**
+     * @Route("/user_formation/{id}", name="mesformation")
+     */
+    public function showformation(Request $request){
+
+        if ($request->isXmlHttpRequest()){
+            $id = $request->get('id');
+            $formation = $this->getDoctrine()->getRepository(Formation::class)->find($id);
+            $payload['nom'] =$formation->getNomFormation();
+            $payload['Description'] =  $formation->getDescription();
+            foreach ($formation->getcontenuImg() as $key => $item){
+                $payload['images'][$key] = $item->geturlImage();
+            }
+            foreach ($formation->getContenutext() as $key => $item){
+                $payload['titre'][$key] = $item->getTitre();
+                $payload['text'][$key] = $item->getText();
+            }
+            return new JsonResponse(array('formation' => json_encode($payload)));
+
+        }
+
     }
 
 }

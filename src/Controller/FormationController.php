@@ -83,6 +83,14 @@ class FormationController extends AbstractController
     }
 
     /**
+     * @Route("/{idformation}/show", name="show_formation", methods="GET")
+     */
+    public function showformation(Formation $formation): Response
+    {
+        return ['formation' => $formation];
+    }
+
+    /**
      * @Route("/{idformation}/edit", name="formation_edit", methods="GET|POST")
      */
     public function edit(Request $request, Formation $formation): Response

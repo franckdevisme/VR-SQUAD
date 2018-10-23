@@ -5,7 +5,7 @@
     <div class=" container-fluid ">
         <div class="space2"></div>
 
-        <h2 data-sr="move 16px scale up 80%, over 1s" class="text-center">Bonjour {{ app.user.nom }},</h2>
+        <h2 data-sr="move 16px scale up 80%, over 1s" class="text-center">Bonjour {{ app.user.prenom }},</h2>
         <p class="text-center" data-sr="move 16px scale up 80%, over 1.3s">Bienvenue dans votre espace client !<span></span></p>
 
         <div class="space1"></div>
@@ -25,7 +25,7 @@
                     <form>
                         <h5 data-sr="move 16px scale up 80%, over 1s">Change votre photo de profile </h5>
                         <div class="center">
-                            <img src="{{ app.user.avater }}">
+                            <img src="{% if app.user %} {%  if app.user.avater %}{{ app.user.avater }} {% else %} {{ asset('img/avater.jpg') }} {% endif %} {% endif %} " >
                         </div>
                         <span class="input input-file">
                   <label for="file" class="text-center">Personalisez votre photo de profils</label>
