@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends Controller
 {
     /**
-     * @Route("/Admin_deshboards", name="Admin_deshboards", methods="GET")
+     * @Route("/admin/deshboards", name="Admin_deshboards", methods="GET")
      */
     public function  indexAction(){
 
