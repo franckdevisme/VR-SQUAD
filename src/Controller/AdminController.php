@@ -31,7 +31,7 @@ class AdminController extends Controller
         $user = $rps = $this->getDoctrine()->getRepository(User::class)->findAll();
 
 
-        return $this->render('Admin/lstuser.html.twig', array('users' =>$user));
+        return $this->render('admin/lstuser.html.twig', array('users' =>$user));
     }
 
     /**
