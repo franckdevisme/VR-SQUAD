@@ -21,7 +21,7 @@ class AdminController extends Controller
      */
     public function  indexAction(){
 
-         return $this->render('Admin/index.html.twig');
+         return $this->render('admin/index.html.twig');
     }
 
     /**
@@ -48,7 +48,7 @@ class AdminController extends Controller
                 $allowedUsers = $user;
             }
         }
-        return $this->render('Admin/lstformatuer.html.twig', array('users' => $allowedUsers));
+        return $this->render('admin/lstformatuer.html.twig', array('users' => $allowedUsers));
     }
     /**
      * @Route("/admin/user/{id}", name="user", methods="GET")
@@ -69,7 +69,7 @@ class AdminController extends Controller
 
         }
 
-        return $this->render('Admin/lstuser.html.twig');
+        return $this->render('admin/lstuser.html.twig');
     }
 
 
