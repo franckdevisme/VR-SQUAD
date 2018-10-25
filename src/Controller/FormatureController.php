@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 class FormatureController extends Controller
 {
     /**
-     * @Route("/formatuer/deshboards", name="formatuer_deshboards", methods="GET")
+     * @Route("/formatuer/deshboards", name="mes_formations", methods="GET")
      */
     public function indexAction(){
 
@@ -29,7 +29,7 @@ class FormatureController extends Controller
     }
 
     /**
-     * @Route("/mesformation/{id}", name="mesformationonlien")
+     * @Route("/maformation/{id}", name="maformation")
      */
     public function showformation(Request $request){
 

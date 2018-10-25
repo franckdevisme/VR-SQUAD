@@ -49,6 +49,11 @@
   z-index: 1;
 }
 
+.user:hover{
+  padding: 2%;
+  background-color: #9d9d9d;
+}
+
 @media all and (min-width: 992px) {
   .sidebar .nav>li.active-pro {
     position: absolute;

@@ -94,5 +94,12 @@ class Entreprise
      */
     private $idrole;
 
+    /**
+     * @return int
+     */
+    public function getIdentreprise(): int
+    {
+        return $this->identreprise;
+    }
 
 }

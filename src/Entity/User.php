@@ -163,6 +163,16 @@ class User extends BaseUser
         $this->nom = $nom;
     }
 
+    /**
+     * @return \Entreprise|null
+     */
+    public function getIdentreprise(): ?\Entreprise
+    {
+        return $this->identreprise;
+    }
+
+
+
     
 
 }
