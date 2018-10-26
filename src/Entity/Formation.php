@@ -198,11 +198,19 @@ class Formation
     }
 
     /**
-     * @return \Entreprise
+     * @return bool
      */
-    public function getIdentreprise(): \Entreprise
+    public function isDisplayPourUser(): bool
     {
-        return $this->identreprise;
+        return $this->displayPourUser;
+    }
+
+    /**
+     * @param bool $isvalide
+     */
+    public function setIsvalide(bool $isvalide): void
+    {
+        $this->isvalide = $isvalide;
     }
 
     /**
@@ -214,11 +222,11 @@ class Formation
     }
 
     /**
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Entreprise
      */
-    public function getId(): \Doctrine\Common\Collections\Collection
+    public function getIdentreprise(): \Entreprise
     {
-        return $this->id;
+        return $this->identreprise;
     }
 
     /**
@@ -230,11 +238,11 @@ class Formation
     }
 
     /**
-     * @param int $idformation
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setIdformation(int $idformation): void
+    public function getId(): \Doctrine\Common\Collections\Collection
     {
-        $this->idformation = $idformation;
+        return $this->id;
     }
 
     /**
@@ -243,6 +251,14 @@ class Formation
     public function getIdformation(): int
     {
         return $this->idformation;
+    }
+
+    /**
+     * @param int $idformation
+     */
+    public function setIdformation(int $idformation): void
+    {
+        $this->idformation = $idformation;
     }
 
     /**
@@ -350,6 +366,14 @@ class Formation
     }
 
     /**
+     * @param \Doctrine\Common\Collections\Collection $contenuvideo
+     */
+    public function setContenuvideo(\Doctrine\Common\Collections\Collection $contenuvideo): void
+    {
+        $this->contenuvideo = $contenuvideo;
+    }
+
+    /**
      * @param \DateTime $dateDePublication
      */
     public function setDateDePublication(\DateTime $dateDePublication): void
@@ -379,14 +403,6 @@ class Formation
     public function setDisplayPourUser(bool $displayPourUser): void
     {
         $this->displayPourUser = $displayPourUser;
-    }
-
-    /**
-     * @param bool $isvalide
-     */
-    public function setIsvalide(bool $isvalide): void
-    {
-        $this->isvalide = $isvalide;
     }
 
     /**
@@ -456,14 +472,6 @@ class Formation
     /**
      * @return bool
      */
-    public function isDisplayPourUser(): bool
-    {
-        return $this->displayPourUser;
-    }
-
-    /**
-     * @return bool
-     */
     public function isIsvalide(): bool
     {
         return $this->isvalide;
@@ -492,14 +500,5 @@ class Formation
     {
         $this->contenutext = $contenutext;
     }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $contenuvideo
-     */
-    public function setContenuvideo(\Doctrine\Common\Collections\Collection $contenuvideo): void
-    {
-        $this->contenuvideo = $contenuvideo;
-    }
-    
 
 }

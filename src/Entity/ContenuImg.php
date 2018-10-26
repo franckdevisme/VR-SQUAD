@@ -51,6 +51,38 @@ class ContenuImg
     }
 
     /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormation(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->formation;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $formation
+     */
+    public function setFormation(\Doctrine\Common\Collections\Collection $formation): void
+    {
+        $this->formation = $formation;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrlImage(): string
+    {
+        return $this->urlImage;
+    }
+
+    /**
+     * @param string $nameImage
+     */
+    public function setNameImage(string $nameImage): void
+    {
+        $this->nameImage = $nameImage;
+    }
+
+    /**
      * @return int
      */
     public function getIdcontenuImg(): int
@@ -67,27 +99,11 @@ class ContenuImg
     }
 
     /**
-     * @return string|null
-     */
-    public function getUrlImage(): ?string
-    {
-        return $this->urlImage;
-    }
-
-    /**
      * @param int $idcontenuImg
      */
     public function setIdcontenuImg(int $idcontenuImg): void
     {
         $this->idcontenuImg = $idcontenuImg;
-    }
-
-    /**
-     * @param string $nameImage
-     */
-    public function setNameImage(string $nameImage): void
-    {
-        $this->nameImage = $nameImage;
     }
 
     /**
@@ -97,22 +113,5 @@ class ContenuImg
     {
         $this->urlImage = $urlImage;
     }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getFormation(): \Doctrine\Common\Collections\Collection
-    {
-        return $this->formation;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $formation
-     */
-    public function setFormation(\Doctrine\Common\Collections\Collection $formation): void
-    {
-        $this->formation = $formation;
-    }
-
 
 }

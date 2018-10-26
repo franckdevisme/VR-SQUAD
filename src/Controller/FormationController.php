@@ -71,7 +71,6 @@ class FormationController extends AbstractController
         $em->flush();
 
         return $this->redirectToRoute('formation_index');
-
     }
 
     /**
@@ -95,14 +94,7 @@ class FormationController extends AbstractController
      */
     public function edit(Request $request, Formation $formation): Response
     {
-        /*$form = $this->createForm(FormationType::class, $formation);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('formation_edit', ['idformation' => $formation->getIdformation()]);
-        }*/
 
         return $this->render('Formation/updateformation.html.twig', [
             'formation' => $formation,

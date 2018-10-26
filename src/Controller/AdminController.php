@@ -7,6 +7,7 @@
  */
 
 namespace App\Controller;
+use App\Entity\Entreprise;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,56 +21,115 @@ class AdminController extends Controller
      * @Route("/admin/deshboards", name="Admin_deshboards", methods="GET")
      */
     public function  indexAction(){
+        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+            $requestStack = $this->get('request_stack');
+            $maseterResquest = $requestStack->getMasterRequest();
+            $route = null;
+            if ($maseterResquest) {
+                $route = $maseterResquest->attributes->get('_route');
+            }
+            return $this->render('admin/index.html.twig', array('route' => $route));
+        }
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
 
-         return $this->render('admin/index.html.twig');
     }
 
     /**
      * @Route("/admin/users", name="listeuser", methods="GET")
      */
     public function  lstuser(){
-        $user = $rps = $this->getDoctrine()->getRepository(User::class)->findAll();
+        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+            $requestStack = $this->get('request_stack');
+            $maseterResquest = $requestStack->getMasterRequest();
+            $route = null;
+            if ($maseterResquest) {
+                $route = $maseterResquest->attributes->get('_route');
+            }
 
+            $users = $rps = $this->getDoctrine()->getRepository(User::class)->findAll();
 
-        return $this->render('admin/lstuser.html.twig', array('users' =>$user));
+            return $this->render('admin/lstuser.html.twig', array('users' => $users, 'route' => $route));
+        }
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
     }
 
     /**
      * @Route("/admin/formatuer", name="listformatuer", methods="GET")
      */
     public function  lstformateur(){
-
-        $allowedUsers = array();
-        $users = $rps = $this->getDoctrine()->getRepository(User::class)->findAll();
-        foreach($users as $user){
-
-            if($user->getRoles() === "ROLE_FORMATEUR");
-            {
-                $allowedUsers = $user;
+        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+            $requestStack = $this->get('request_stack');
+            $maseterResquest = $requestStack->getMasterRequest();
+            $route = null;
+            if ($maseterResquest) {
+                $route = $maseterResquest->attributes->get('_route');
             }
+
+            $query = $this->getDoctrine()->getEntityManager()
+                ->createQuery(
+                    'SELECT u FROM App:User u WHERE u.roles LIKE :role'
+                )->setParameter('role', '%"ROLE_FORMATEUR"%'
+                );
+            $users = $query->getResult();
+
+            return $this->render('admin/lstformatuer.html.twig', array('users' => $users, 'route' => $route));
         }
-        return $this->render('admin/lstformatuer.html.twig', array('users' => $allowedUsers));
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+    }
+
+    /**
+     * @Route("/admin/profile", name="monprofile", methods="GET")
+     */
+    public function  monprofil(){
+        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+            $requestStack = $this->get('request_stack');
+            $maseterResquest = $requestStack->getMasterRequest();
+            $route = null;
+            if ($maseterResquest) {
+                $route = $maseterResquest->attributes->get('_route');
+            }
+
+            $user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser()->getId());
+            return $this->render('admin/monprofile.html.twig', array('user' => $user, 'route' => $route));
+        }
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
     }
     /**
      * @Route("/admin/user/{id}", name="user", methods="GET")
      */
     public function  findOneuser(Request $request){
-        if ($request->isXmlHttpRequest()){
-            $id = $request->get('id');
-            $user = $this->getDoctrine()->getRepository(User::class)->find($id);
-            $payload['username'] = $user->getUsername();
-            $payload['nom'] = $user->getNom();
-            $payload['prenom'] = $user->getPrenom();
-            $payload['poste'] = $user->getPoste();
-            $payload['email'] = $user->getEmail();
-            //$payload['entreprise'] = $user->getIdentreprise();
-
-
-            return new JsonResponse(array('user' => json_encode($payload)));
-
+        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+            if ($request->isXmlHttpRequest()) {
+                $id = $request->get('id');
+                $user = $this->getDoctrine()->getRepository(User::class)->find($id);
+                $payload['username'] = $user->getUsername();
+                $payload['nom'] = $user->getNom();
+                $payload['prenom'] = $user->getPrenom();
+                $payload['job'] = $user->getPoste();
+                $payload['email'] = $user->getEmail();
+                foreach ($user->getIdentreprise() as $item) {
+                    $payload['Entreprise'] = $item->getNomEntreprise();
+                    $payload['address'] = $item->getAdresse();
+                    $payload['cp'] = $item->getCp();
+                    $payload['ville'] = $item->getVille();
+                    $payload['pays'] = $item->getPays();
+                }
+                return new JsonResponse(array('user' => json_encode($payload)));
+            }
+            return $this->render('admin/lstuser.html.twig');
         }
-
-        return $this->render('admin/lstuser.html.twig');
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
     }
 
 

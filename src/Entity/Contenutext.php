@@ -51,43 +51,19 @@ class Contenutext
     }
 
     /**
-     * @param \Doctrine\Common\Collections\Collection $formation
+     * @param int $idcontenutext
      */
-    public function setFormation(\Doctrine\Common\Collections\Collection $formation): void
+    public function setIdcontenutext(int $idcontenutext): void
     {
-        $this->formation = $formation;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getFormation(): \Doctrine\Common\Collections\Collection
-    {
-        return $this->formation;
-    }
-
-    /**
-     * @return int
-     */
-    public function getIdcontenutext(): int
-    {
-        return $this->idcontenutext;
-    }
-
-    /**
-     * @param string $titre
-     */
-    public function setTitre(string $titre): void
-    {
-        $this->titre = $titre;
+        $this->idcontenutext = $idcontenutext;
     }
 
     /**
      * @return string
      */
-    public function getTitre(): string
+    public function getText(): string
     {
-        return $this->titre;
+        return $this->text;
     }
 
     /**
@@ -101,17 +77,42 @@ class Contenutext
     /**
      * @return string
      */
-    public function getText(): string
+    public function getTitre(): string
     {
-        return $this->text;
+        return $this->titre;
     }
 
     /**
-     * @param int $idcontenutext
+     * @param string $titre
      */
-    public function setIdcontenutext(int $idcontenutext): void
+    public function setTitre(string $titre): void
     {
-        $this->idcontenutext = $idcontenutext;
+        $this->titre = $titre;
     }
+
+    /**
+     * @return int
+     */
+    public function getIdcontenutext(): int
+    {
+        return $this->idcontenutext;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormation(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->formation;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $formation
+     */
+    public function setFormation(\Doctrine\Common\Collections\Collection $formation): void
+    {
+        $this->formation = $formation;
+    }
+
 
 }
