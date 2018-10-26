@@ -21,7 +21,9 @@ class AdminController extends Controller
      * @Route("/admin/deshboards", name="Admin_deshboards", methods="GET")
      */
     public function  indexAction(){
-        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+        if ($this->getUser()->getRoles()[0] == "ROLE_ADMIN") {
+
+            dump($this->getUser()->getRoles()[0]);
             $requestStack = $this->get('request_stack');
             $maseterResquest = $requestStack->getMasterRequest();
             $route = null;
@@ -40,7 +42,7 @@ class AdminController extends Controller
      * @Route("/admin/users", name="listeuser", methods="GET")
      */
     public function  lstuser(){
-        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+        if ($this->getUser()->getRoles()[0] == "ROLE_ADMIN") {
             $requestStack = $this->get('request_stack');
             $maseterResquest = $requestStack->getMasterRequest();
             $route = null;
@@ -61,7 +63,7 @@ class AdminController extends Controller
      * @Route("/admin/formatuer", name="listformatuer", methods="GET")
      */
     public function  lstformateur(){
-        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+        if ($this->getUser()->getRoles()[0] == "ROLE_ADMIN") {
             $requestStack = $this->get('request_stack');
             $maseterResquest = $requestStack->getMasterRequest();
             $route = null;
@@ -87,7 +89,7 @@ class AdminController extends Controller
      * @Route("/admin/profile", name="monprofile", methods="GET")
      */
     public function  monprofil(){
-        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+        if ($this->getUser()->getRoles()[0] == "ROLE_ADMIN") {
             $requestStack = $this->get('request_stack');
             $maseterResquest = $requestStack->getMasterRequest();
             $route = null;
@@ -107,7 +109,7 @@ class AdminController extends Controller
      * @Route("/admin/user/{id}", name="user", methods="GET")
      */
     public function  findOneuser(Request $request){
-        if ($this->getUser()->getRoles() == 'ROLE_ADMIN') {
+        if ($this->getUser()->getRoles()[0] == "ROLE_ADMIN") {
             if ($request->isXmlHttpRequest()) {
                 $id = $request->get('id');
                 $user = $this->getDoctrine()->getRepository(User::class)->find($id);

@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ba24c5-358a-4e31-bd69-cd288d679b20" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/admin/monprofile.html.twig" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FormationController.php" afterPath="$PROJECT_DIR$/src/Controller/FormationController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Abonnement.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Application.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Categorie.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Commande.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CommandeHasFacture.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CommandeHasFormation.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ContenuImg.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ContenuVideo.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Contenutest.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Contenutext.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Datalog.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Entreprise.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Facture.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Feedback.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Formation.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Group.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Historique.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Paiement.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/PaiementEnXFois.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Paiementformation.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Role.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tarif.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tarifformation.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Typetraif.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/lstformatuer.html.twig" afterPath="$PROJECT_DIR$/templates/admin/lstformatuer.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/lstuser.html.twig" afterPath="$PROJECT_DIR$/templates/admin/lstuser.html.twig" />
       <change beforePath="$PROJECT_DIR$/templates/layoutadmin.html.twig" afterPath="$PROJECT_DIR$/templates/layoutadmin.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,25 +31,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="838">
-              <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+            <state relative-caret-position="566">
+              <caret line="111" column="62" lean-forward="false" selection-start-line="111" selection-start-column="62" selection-end-line="111" selection-end-column="62" />
               <folding>
-                <marker date="1540557577444" expanded="true" signature="2385:2398" ph="SELECT u FRO... " />
-                <marker date="1540557577444" expanded="true" signature="2385:2407" ph="SELECT u FRO... App" />
-                <marker date="1540557577444" expanded="true" signature="2385:2434" ph="SELECT u FRO... User" />
+                <marker date="1540558909926" expanded="true" signature="2446:2459" ph="SELECT u FRO... " />
+                <marker date="1540558909926" expanded="true" signature="2446:2468" ph="SELECT u FRO... App" />
+                <marker date="1540558909926" expanded="true" signature="2446:2495" ph="SELECT u FRO... User" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layoutadmin.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="layoutadmin.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/layoutadmin.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+            <state relative-caret-position="527">
+              <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -207,8 +177,8 @@
         <option value="$PROJECT_DIR$/templates/admin/lstformatuer.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/lstuser.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/monprofile.html.twig" />
-        <option value="$PROJECT_DIR$/templates/layoutadmin.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/templates/layoutadmin.html.twig" />
       </list>
     </option>
   </component>
@@ -455,12 +425,12 @@
       <workItem from="1540294881926" duration="514000" />
       <workItem from="1540295427743" duration="181000" />
       <workItem from="1540295637755" duration="48054000" />
-      <workItem from="1540539982869" duration="12011000" />
+      <workItem from="1540539982869" duration="13332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247132000" />
+    <option name="totallyTimeSpent" value="248453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -923,23 +893,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layoutadmin.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="566">
+          <caret line="111" column="62" lean-forward="false" selection-start-line="111" selection-start-column="62" selection-end-line="111" selection-end-column="62" />
+          <folding>
+            <marker date="1540558909926" expanded="true" signature="2446:2459" ph="SELECT u FRO... " />
+            <marker date="1540558909926" expanded="true" signature="2446:2468" ph="SELECT u FRO... App" />
+            <marker date="1540558909926" expanded="true" signature="2446:2495" ph="SELECT u FRO... User" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+    <entry file="file://$PROJECT_DIR$/templates/layoutadmin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
-          <folding>
-            <marker date="1540557577444" expanded="true" signature="2385:2398" ph="SELECT u FRO... " />
-            <marker date="1540557577444" expanded="true" signature="2385:2407" ph="SELECT u FRO... App" />
-            <marker date="1540557577444" expanded="true" signature="2385:2434" ph="SELECT u FRO... User" />
-          </folding>
+        <state relative-caret-position="527">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
