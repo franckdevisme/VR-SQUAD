@@ -41,15 +41,22 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+                <li {%  if (route == "listformation") %} class="active " {% endif %}>
+                    <a href="{{ url('listformation') }}">
+                        <i class="now-ui-icons users_single-02"></i>
+                        <p>Liste des formations</p>
+                    </a>
+                </li>
+
                 <li {%  if (route == "listeuser") %} class="active " {% endif %}>
                     <a href="{{ url('listeuser') }}">
-                        <i class="now-ui-icons education_atom"></i>
+                        <i class="now-ui-icons users_single-02"></i>
                         <p>Liste user</p>
                     </a>
                 </li>
                 <li {%  if (route == "listformatuer") %} class="active " {% endif %}>
                     <a href="{{ url('listformatuer') }}">
-                        <i class="now-ui-icons location_map-big"></i>
+                        <i class="now-ui-icons users_single-02"></i>
                         <p>Liste des formateurs</p>
                     </a>
                 </li>

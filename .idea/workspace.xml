@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ba24c5-358a-4e31-bd69-cd288d679b20" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/admin/lstformtion.html.twig" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/lstformatuer.html.twig" afterPath="$PROJECT_DIR$/templates/admin/lstformatuer.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/lstuser.html.twig" afterPath="$PROJECT_DIR$/templates/admin/lstuser.html.twig" />
       <change beforePath="$PROJECT_DIR$/templates/layoutadmin.html.twig" afterPath="$PROJECT_DIR$/templates/layoutadmin.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +25,10 @@
       <file leaf-file-name="lstformatuer.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/admin/lstformatuer.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="16" />
+            <state relative-caret-position="442">
+              <caret line="26" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding>
-                <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-                <element signature="e#6494#7514#0#HTML" expanded="false" />
+                <element signature="e#6670#7690#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -34,22 +37,52 @@
       <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="111" column="62" lean-forward="false" selection-start-line="111" selection-start-column="62" selection-end-line="111" selection-end-column="62" />
+            <state relative-caret-position="651">
+              <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
               <folding>
-                <marker date="1540558909926" expanded="true" signature="2446:2459" ph="SELECT u FRO... " />
-                <marker date="1540558909926" expanded="true" signature="2446:2468" ph="SELECT u FRO... App" />
-                <marker date="1540558909926" expanded="true" signature="2446:2495" ph="SELECT u FRO... User" />
+                <marker date="1540560017697" expanded="true" signature="2472:2521" ph="SELECT u FRO... App" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layoutadmin.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lstformtion.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/admin/lstformtion.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="668">
+              <caret line="42" column="67" lean-forward="false" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+              <folding>
+                <element signature="e#6380#7400#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Formation/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContenuImg.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/ContenuImg.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layoutadmin.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layoutadmin.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+            <state relative-caret-position="588">
+              <caret line="46" column="47" lean-forward="false" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -58,8 +91,8 @@
       <file leaf-file-name="monprofile.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/admin/monprofile.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="91" column="64" lean-forward="false" selection-start-line="91" selection-start-column="64" selection-end-line="91" selection-end-column="64" />
+            <state relative-caret-position="17">
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -68,11 +101,11 @@
       <file leaf-file-name="lstuser.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/admin/lstuser.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="149" column="9" lean-forward="false" selection-start-line="123" selection-start-column="7" selection-end-line="149" selection-end-column="9" />
+            <state relative-caret-position="459">
+              <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-                <element signature="e#6706#7722#0#HTML" expanded="false" />
+                <element signature="e#6834#7850#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -128,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/Formation/new.html.twig" />
         <option value="$PROJECT_DIR$/templates/Formation/_delete_form.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Categorie.php" />
         <option value="$PROJECT_DIR$/templates/categorie/index.html.twig" />
@@ -174,11 +206,12 @@
         <option value="$PROJECT_DIR$/src/Entity/Formation.php" />
         <option value="$PROJECT_DIR$/src/Entity/Contenutext.php" />
         <option value="$PROJECT_DIR$/src/Entity/ContenuImg.php" />
-        <option value="$PROJECT_DIR$/templates/admin/lstformatuer.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/lstuser.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/monprofile.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/templates/admin/lstuser.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/lstformatuer.html.twig" />
         <option value="$PROJECT_DIR$/templates/layoutadmin.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/templates/admin/lstformtion.html.twig" />
       </list>
     </option>
   </component>
@@ -355,6 +388,12 @@
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="vr_squad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vr_squad" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Formation" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -425,12 +464,12 @@
       <workItem from="1540294881926" duration="514000" />
       <workItem from="1540295427743" duration="181000" />
       <workItem from="1540295637755" duration="48054000" />
-      <workItem from="1540539982869" duration="13332000" />
+      <workItem from="1540539982869" duration="15219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248453000" />
+    <option name="totallyTimeSpent" value="250340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -515,14 +554,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entity/Group.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes/fos_user.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -718,14 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Formation/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -823,14 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/ContenuImg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -844,17 +859,6 @@
         <state relative-caret-position="680">
           <caret line="40" column="153" lean-forward="false" selection-start-line="40" selection-start-column="116" selection-end-line="40" selection-end-column="153" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/lstformatuer.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="16" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="e#6494#7514#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -876,40 +880,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/lstuser.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="149" column="9" lean-forward="false" selection-start-line="123" selection-start-column="7" selection-end-line="149" selection-end-column="9" />
+        <state relative-caret-position="459">
+          <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
           <folding>
             <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="e#6706#7722#0#HTML" expanded="false" />
+            <element signature="e#6834#7850#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/monprofile.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="91" column="64" lean-forward="false" selection-start-line="91" selection-start-column="64" selection-end-line="91" selection-end-column="64" />
+        <state relative-caret-position="17">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layoutadmin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="46" column="47" lean-forward="false" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="111" column="62" lean-forward="false" selection-start-line="111" selection-start-column="62" selection-end-line="111" selection-end-column="62" />
+        <state relative-caret-position="651">
+          <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
           <folding>
-            <marker date="1540558909926" expanded="true" signature="2446:2459" ph="SELECT u FRO... " />
-            <marker date="1540558909926" expanded="true" signature="2446:2468" ph="SELECT u FRO... App" />
-            <marker date="1540558909926" expanded="true" signature="2446:2495" ph="SELECT u FRO... User" />
+            <marker date="1540560017697" expanded="true" signature="2472:2521" ph="SELECT u FRO... App" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layoutadmin.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/admin/lstformatuer.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        <state relative-caret-position="442">
+          <caret line="26" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding>
+            <element signature="e#6670#7690#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/ContenuImg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Formation/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/lstformtion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="42" column="67" lean-forward="false" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+          <folding>
+            <element signature="e#6380#7400#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

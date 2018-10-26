@@ -7,8 +7,11 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-user">
+                    <div class="card-header">
+                        <h5 class="title">Liste des users</h5>
+                    </div>
                     <div class="card-body">
-                        <h4> Liste des user </h4>
+
                         {% for key, user in users %}
                                 {%  for key ,entreprise in user.identreprise %}
                             <div class="row user" onclick="showuser({{ user.id }})">
@@ -22,6 +25,7 @@
                                             {{ entreprise.nomentreprise }}
                                         </div>
                             </div>
+                                    <hr>
                                 {% endfor %}
                         {% endfor %}
                     </div>

@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 use App\Entity\Entreprise;
+use App\Entity\Formation;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
@@ -79,6 +80,23 @@ class AdminController extends Controller
             $users = $query->getResult();
 
             return $this->render('admin/lstformatuer.html.twig', array('users' => $users, 'route' => $route));
+        }
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+    }/**
+     * @Route("/admin/formation", name="listformation", methods="GET")
+     */
+    public function  lstformation(){
+        if ($this->getUser()->getRoles()[0] == "ROLE_ADMIN") {
+            $requestStack = $this->get('request_stack');
+            $maseterResquest = $requestStack->getMasterRequest();
+            $route = null;
+            if ($maseterResquest) {
+                $route = $maseterResquest->attributes->get('_route');
+            }
+            $formations = $this->getDoctrine()->getRepository(Formation::class)->findAll();
+            return $this->render('admin/lstformtion.html.twig', array('formations' => $formations, 'route' => $route));
         }
         else {
             return $this->redirectToRoute('fos_user_security_login');
