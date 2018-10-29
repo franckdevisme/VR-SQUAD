@@ -15,15 +15,6 @@ class Tarif
     /**
      * @var int
      *
-     * @ORM\Column(name="idTarif", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idtarif;
-
-    /**
-     * @var int
-     *
      * @ORM\Column(name="traifHT", type="integer", nullable=false)
      */
     private $traifht;
@@ -41,6 +32,15 @@ class Tarif
      * @ORM\Column(name="nombre_user", type="integer", nullable=false)
      */
     private $nombreUser;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idTarif", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idtarif;
 
     /**
      * @var \Typetraif

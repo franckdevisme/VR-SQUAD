@@ -22,18 +22,6 @@ class CommandeHasFormation
     private $idcmdFor;
 
     /**
-     * @var \Commande
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Commande")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idcommande", referencedColumnName="idcommande")
-     * })
-     */
-    private $idcommande;
-
-    /**
      * @var \Formation
      *
      * @ORM\Id
@@ -44,6 +32,18 @@ class CommandeHasFormation
      * })
      */
     private $idformation;
+
+    /**
+     * @var \Commande
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Commande")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idcommande", referencedColumnName="idcommande")
+     * })
+     */
+    private $idcommande;
 
 
 }

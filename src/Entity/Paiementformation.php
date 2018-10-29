@@ -71,16 +71,6 @@ class Paiementformation
     private $tokens;
 
     /**
-     * @var \Commande
-     *
-     * @ORM\ManyToOne(targetEntity="Commande")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idcommande", referencedColumnName="idcommande")
-     * })
-     */
-    private $idcommande;
-
-    /**
      * @var \Tarifformation
      *
      * @ORM\ManyToOne(targetEntity="Tarifformation")
@@ -89,6 +79,16 @@ class Paiementformation
      * })
      */
     private $idtarifformation;
+
+    /**
+     * @var \Commande
+     *
+     * @ORM\ManyToOne(targetEntity="Commande")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idcommande", referencedColumnName="idcommande")
+     * })
+     */
+    private $idcommande;
 
 
 }

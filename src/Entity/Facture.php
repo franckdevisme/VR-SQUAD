@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Facture
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="idFacture", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idfacture;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="datefacture", type="date", nullable=false)
@@ -62,6 +53,15 @@ class Facture
      * @ORM\Column(name="pays", type="string", length=255, nullable=true)
      */
     private $pays;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idFacture", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idfacture;
 
     /**
      * @var \User

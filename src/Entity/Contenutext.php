@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Contenutext
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="idContenutext", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idcontenutext;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=45, nullable=false)
@@ -34,6 +25,15 @@ class Contenutext
      * @ORM\Column(name="text", type="text", length=0, nullable=false)
      */
     private $text;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idContenutext", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idcontenutext;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -49,8 +49,7 @@ class Contenutext
     {
         $this->formation = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-    /**
+	 /**
      * @param int $idcontenutext
      */
     public function setIdcontenutext(int $idcontenutext): void
@@ -113,6 +112,7 @@ class Contenutext
     {
         $this->formation = $formation;
     }
+
 
 
 }

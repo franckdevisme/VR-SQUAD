@@ -49,8 +49,8 @@ class ContenuImg
     {
         $this->formation = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-    /**
+	
+	/**
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getFormation(): \Doctrine\Common\Collections\Collection
@@ -113,5 +113,6 @@ class ContenuImg
     {
         $this->urlImage = $urlImage;
     }
+
 
 }

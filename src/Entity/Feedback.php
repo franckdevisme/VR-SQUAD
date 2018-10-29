@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Feedback
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="idFeedback", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idfeedback;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="note", type="string", length=45, nullable=false)
@@ -36,14 +27,13 @@ class Feedback
     private $commenter;
 
     /**
-     * @var \User
+     * @var int
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="idFeedback", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $idfeedback;
 
     /**
      * @var \Formation
@@ -54,6 +44,16 @@ class Feedback
      * })
      */
     private $idformation;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id", referencedColumnName="id")
+     * })
+     */
+    private $id;
 
 
 }

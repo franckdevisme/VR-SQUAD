@@ -5,251 +5,251 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
-/**
- * User
- *
- * @ORM\Table(name="user")
- * @ORM\Entity
- */
-class User extends BaseUser
-{
     /**
-     * @var int
+     * User
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Table(name="user")
+     * @ORM\Entity
      */
-    protected $id;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="nom", type="string", length=255, nullable=true)
-     */
-    private $nom;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="prenom", type="string", length=255, nullable=true)
-     */
-    private $prenom;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="avater", type="text", length=0, nullable=true)
-     */
-    private $avater;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="poste", type="string", length=255, nullable=true)
-     */
-    private $poste;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="emailpersonnelle", type="string", length=255, nullable=true)
-     */
-    private $emailpersonnelle;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Formation", inversedBy="id")
-     * @ORM\JoinTable(name="formation_suivi_par",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="id", referencedColumnName="id")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="idformation", referencedColumnName="idformation")
-     *   }
-     * )
-     */
-    private $idformation;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="FosGroup", inversedBy="user")
-     * @ORM\JoinTable(name="fos_user_user_group",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="group_id", referencedColumnName="id")
-     *   }
-     * )
-     */
-    private $group;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Entreprise", inversedBy="id")
-     * @ORM\JoinTable(name="user_has_entreprise",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="id", referencedColumnName="id")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="idEntreprise", referencedColumnName="idEntreprise")
-     *   }
-     * )
-     */
-    private $identreprise;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
+    class User extends BaseUser
     {
-        parent::__construct();
-        $this->idformation = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->group = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->identreprise = new \Doctrine\Common\Collections\ArrayCollection();
+        /**
+         * @var int
+         *
+         * @ORM\Column(name="id", type="integer", nullable=false)
+         * @ORM\Id
+         * @ORM\GeneratedValue(strategy="IDENTITY")
+         */
+        protected $id;
+
+        /**
+         * @var string|null
+         *
+         * @ORM\Column(name="nom", type="string", length=255, nullable=true)
+         */
+        private $nom;
+
+        /**
+         * @var string|null
+         *
+         * @ORM\Column(name="prenom", type="string", length=255, nullable=true)
+         */
+        private $prenom;
+
+        /**
+         * @var string|null
+         *
+         * @ORM\Column(name="avater", type="text", length=0, nullable=true)
+         */
+        private $avater;
+
+        /**
+         * @var string|null
+         *
+         * @ORM\Column(name="poste", type="string", length=255, nullable=true)
+         */
+        private $poste;
+
+        /**
+         * @var string|null
+         *
+         * @ORM\Column(name="emailpersonnelle", type="string", length=255, nullable=true)
+         */
+        private $emailpersonnelle;
+
+        /**
+         * @var \Doctrine\Common\Collections\Collection
+         *
+         * @ORM\ManyToMany(targetEntity="Formation", inversedBy="id")
+         * @ORM\JoinTable(name="formation_suivi_par",
+         *   joinColumns={
+         *     @ORM\JoinColumn(name="id", referencedColumnName="id")
+         *   },
+         *   inverseJoinColumns={
+         *     @ORM\JoinColumn(name="idformation", referencedColumnName="idformation")
+         *   }
+         * )
+         */
+        private $idformation;
+
+        /**
+         * @var \Doctrine\Common\Collections\Collection
+         *
+         * @ORM\ManyToMany(targetEntity="FosGroup", inversedBy="user")
+         * @ORM\JoinTable(name="fos_user_user_group",
+         *   joinColumns={
+         *     @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+         *   },
+         *   inverseJoinColumns={
+         *     @ORM\JoinColumn(name="group_id", referencedColumnName="id")
+         *   }
+         * )
+         */
+        private $group;
+
+        /**
+         * @var \Doctrine\Common\Collections\Collection
+         *
+         * @ORM\ManyToMany(targetEntity="Entreprise", inversedBy="id")
+         * @ORM\JoinTable(name="user_has_entreprise",
+         *   joinColumns={
+         *     @ORM\JoinColumn(name="id", referencedColumnName="id")
+         *   },
+         *   inverseJoinColumns={
+         *     @ORM\JoinColumn(name="idEntreprise", referencedColumnName="idEntreprise")
+         *   }
+         * )
+         */
+        private $identreprise;
+
+        /**
+         * Constructor
+         */
+        public function __construct()
+        {
+            parent::__construct();
+            $this->idformation = new \Doctrine\Common\Collections\ArrayCollection();
+            $this->group = new \Doctrine\Common\Collections\ArrayCollection();
+            $this->identreprise = new \Doctrine\Common\Collections\ArrayCollection();
+        }
+
+        /**
+         * @param \Doctrine\Common\Collections\Collection $identreprise
+         */
+        public function setIdentreprise(\Doctrine\Common\Collections\Collection $identreprise): void
+        {
+            $this->identreprise = $identreprise;
+        }
+
+        /**
+         * @return \Doctrine\Common\Collections\Collection
+         */
+        public function getIdentreprise(): \Doctrine\Common\Collections\Collection
+        {
+            return $this->identreprise;
+        }
+
+        /**
+         * @param int $id
+         */
+        public function setId(int $id): void
+        {
+            $this->id = $id;
+        }
+
+        /**
+         * @return int
+         */
+        public function getId(): int
+        {
+            return $this->id;
+        }
+
+        /**
+         * @param \Doctrine\Common\Collections\Collection $idformation
+         */
+        public function setIdformation(\Doctrine\Common\Collections\Collection $idformation): void
+        {
+            $this->idformation = $idformation;
+        }
+
+        /**
+         * @return \Doctrine\Common\Collections\Collection
+         */
+        public function getIdformation(): \Doctrine\Common\Collections\Collection
+        {
+            return $this->idformation;
+        }
+        public function getEmail()
+        {
+            return parent::getEmail(); // TODO: Change the autogenerated stub
+        }
+
+        /**
+         * @param null|string $nom
+         */
+        public function setNom(?string $nom): void
+        {
+            $this->nom = $nom;
+        }
+
+        /**
+         * @param null|string $poste
+         */
+        public function setPoste(?string $poste): void
+        {
+            $this->poste = $poste;
+        }
+
+        /**
+         * @param null|string $prenom
+         */
+        public function setPrenom(?string $prenom): void
+        {
+            $this->prenom = $prenom;
+        }
+
+        /**
+         * @return null|string
+         */
+        public function getPrenom(): ?string
+        {
+            return $this->prenom;
+        }
+        public function getRoles()
+        {
+            return parent::getRoles(); // TODO: Change the autogenerated stub
+        }
+
+        /**
+         * @return null|string
+         */
+        public function getAvater(): ?string
+        {
+            return $this->avater;
+        }
+
+        /**
+         * @param null|string $avater
+         */
+        public function setAvater(?string $avater): void
+        {
+            $this->avater = $avater;
+        }
+
+        /**
+         * @return null|string
+         */
+        public function getPoste(): ?string
+        {
+            return $this->poste;
+        }
+
+        /**
+         * @return null|string
+         */
+        public function getNom(): ?string
+        {
+            return $this->nom;
+        }
+
+        /**
+         * @return null|string
+         */
+        public function getEmailpersonnelle(): ?string
+        {
+            return $this->emailpersonnelle;
+        }
+
+        /**
+         * @param null|string $emailpersonnelle
+         */
+        public function setEmailpersonnelle(?string $emailpersonnelle): void
+        {
+            $this->emailpersonnelle = $emailpersonnelle;
+        }
+
+
+
+
     }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $identreprise
-     */
-    public function setIdentreprise(\Doctrine\Common\Collections\Collection $identreprise): void
-    {
-        $this->identreprise = $identreprise;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getIdentreprise(): \Doctrine\Common\Collections\Collection
-    {
-        return $this->identreprise;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $idformation
-     */
-    public function setIdformation(\Doctrine\Common\Collections\Collection $idformation): void
-    {
-        $this->idformation = $idformation;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getIdformation(): \Doctrine\Common\Collections\Collection
-    {
-        return $this->idformation;
-    }
-    public function getEmail()
-    {
-        return parent::getEmail(); // TODO: Change the autogenerated stub
-    }
-
-    /**
-     * @param null|string $nom
-     */
-    public function setNom(?string $nom): void
-    {
-        $this->nom = $nom;
-    }
-
-    /**
-     * @param null|string $poste
-     */
-    public function setPoste(?string $poste): void
-    {
-        $this->poste = $poste;
-    }
-
-    /**
-     * @param null|string $prenom
-     */
-    public function setPrenom(?string $prenom): void
-    {
-        $this->prenom = $prenom;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getPrenom(): ?string
-    {
-        return $this->prenom;
-    }
-    public function getRoles()
-    {
-        return parent::getRoles(); // TODO: Change the autogenerated stub
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getAvater(): ?string
-    {
-        return $this->avater;
-    }
-
-    /**
-     * @param null|string $avater
-     */
-    public function setAvater(?string $avater): void
-    {
-        $this->avater = $avater;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getPoste(): ?string
-    {
-        return $this->poste;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getEmailpersonnelle(): ?string
-    {
-        return $this->emailpersonnelle;
-    }
-
-    /**
-     * @param null|string $emailpersonnelle
-     */
-    public function setEmailpersonnelle(?string $emailpersonnelle): void
-    {
-        $this->emailpersonnelle = $emailpersonnelle;
-    }
-
-
-
-
-}

@@ -99,16 +99,6 @@ class Formation
     private $isvalide;
 
     /**
-     * @var \Entreprise
-     *
-     * @ORM\ManyToOne(targetEntity="Entreprise")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idEntreprise", referencedColumnName="idEntreprise")
-     * })
-     */
-    private $identreprise;
-
-    /**
      * @var \Categorie
      *
      * @ORM\ManyToOne(targetEntity="Categorie")
@@ -117,6 +107,16 @@ class Formation
      * })
      */
     private $idcategorie;
+
+    /**
+     * @var \Entreprise
+     *
+     * @ORM\ManyToOne(targetEntity="Entreprise")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idEntreprise", referencedColumnName="idEntreprise")
+     * })
+     */
+    private $identreprise;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -196,8 +196,7 @@ class Formation
         $this->contenutext = new \Doctrine\Common\Collections\ArrayCollection();
         $this->id = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-    /**
+	 /**
      * @return bool
      */
     public function isDisplayPourUser(): bool
@@ -500,5 +499,6 @@ class Formation
     {
         $this->contenutext = $contenutext;
     }
+
 
 }

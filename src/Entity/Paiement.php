@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Paiement
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="idPaiement", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idpaiement;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=45, nullable=false)
@@ -76,6 +67,15 @@ class Paiement
      * @ORM\Column(name="Tokens", type="text", length=0, nullable=true)
      */
     private $tokens;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idPaiement", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idpaiement;
 
     /**
      * @var \PaiementEnXFois

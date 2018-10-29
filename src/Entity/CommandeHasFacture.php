@@ -22,16 +22,6 @@ class CommandeHasFacture
     private $idcmdFor;
 
     /**
-     * @var \Facture
-     *
-     * @ORM\ManyToOne(targetEntity="Facture")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idFacture", referencedColumnName="idFacture")
-     * })
-     */
-    private $idfacture;
-
-    /**
      * @var \Commande
      *
      * @ORM\ManyToOne(targetEntity="Commande")
@@ -40,6 +30,16 @@ class CommandeHasFacture
      * })
      */
     private $idcommande;
+
+    /**
+     * @var \Facture
+     *
+     * @ORM\ManyToOne(targetEntity="Facture")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idFacture", referencedColumnName="idFacture")
+     * })
+     */
+    private $idfacture;
 
 
 }
