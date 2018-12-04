@@ -1,4 +1,4 @@
-{% extends 'layoutadmin.html.twig' %}
+{% extends 'layoutuser.html.twig' %}
 {% block body %}
     <div class="panel-header panel-header-sm">
     </div>
@@ -20,6 +20,7 @@
                         </p>
                     </div>
                     <p class="description text-center">
+
                         {{ user.poste }}
                     </p>
                 </div>
@@ -41,9 +42,6 @@
             <div class="card">
                 <div class="card-header">
                     <h5 class="title">Mon profile</h5>
-
-
-
                 </div>
                 <div class="card-body">
                     <form>
@@ -51,9 +49,7 @@
                             <div class="col-md-5 pr-1">
                                 <div class="form-group">
                                     <label>Entreprise (disabled)</label>
-                                    {% for item in user.identreprise %}
-                                    <input type="text" class="form-control" disabled="" id="Entreprise" placeholder="Company" value="{{ item.nomEntreprise }}">
-                                    {% endfor %}
+                                    <input type="text" class="form-control" disabled="" id="Entreprise" placeholder="Company" value="">
                                 </div>
                             </div>
                             <div class="col-md-3 px-1">
@@ -64,7 +60,7 @@
                             </div>
                             <div class="col-md-4 pl-1">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email : </label>
+                                    <label for="exampleInputEmail1">Email address</label>
                                     <input type="email" class="form-control" id="email" placeholder="Email" value="{{ user.email }}">
                                 </div>
                             </div>
@@ -86,8 +82,8 @@
                         <div class="row">
                             <div class="col-md-12 pr-1">
                                 <div class="form-group">
-                                    <label>Fonction</label>
-                                    <input type="text" class="form-control" id="job"  value="{{ user.poste }}">
+                                    <label>Formation : </label>
+                                    <input type="text" class="form-control" id="job" {{ user.poste }}>
                                 </div>
                             </div>
                         </div>

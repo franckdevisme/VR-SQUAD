@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Formation;
+use App\Entity\User;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\AreaChart;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\ComboChart;
@@ -30,38 +31,15 @@ class UserController extends Controller
         $formations = $this->getDoctrine()
             ->getRepository(Formation::class)
             ->findAll();
-        $pieChart = new PieChart();
-        $pieChart->getData()->setArrayToDataTable(
-            [['Task', 'Hours per Day'],
-                ['En Formation Seul',     11],
-                ['standby',  2],
-                ['Piche with caoch', 2],
-            ]
-        );
-        $pieChart->getOptions()->setTitle('Mes Activities');
-        $pieChart->getOptions()->setHeight(400);
-        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
-        $pieChart->getOptions()->getTitleTextStyle()->setColor('#00000');
-        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
-        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
-        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
 
-        $are = new AreaChart();
-        $are->getData()->setArrayToDataTable([['Date', 'Formation1', 'Formation2'],
-            ['10/10/2018',  1000,      400],
-            ['12/10/2018',  1170,      460],
-            ['15/10/2018',  660,       1120],
-            ['17/10/2018',  1030,      540]
-        ]);
+        $requestStack = $this->get('request_stack');
+        $maseterResquest = $requestStack->getMasterRequest();
+        $route = null;
+        if ($maseterResquest) {
+            $route = $maseterResquest->attributes->get('_route');
+        }
 
-        $are->getOptions()->setTitle('Mes Formation');
-        $are->getOptions()->setHeight(400);
-        $are->getOptions()->getTitleTextStyle()->setBold(true);
-        $are->getOptions()->getTitleTextStyle()->setColor('#00000');
-        $are->getOptions()->getTitleTextStyle()->setItalic(true);
-        $are->getOptions()->getTitleTextStyle()->setFontName('Arial');
-        $are->getOptions()->getTitleTextStyle()->setFontSize(20);
-        return $this->render('User/Dashboarduser.html.twig', array('formations' => $formations, 'piechart' => $pieChart, 'AreaChart' => $are ));
+        return $this->render('User/Dashboard.html.twig', array('formations' => $formations,'route' => $route));
 
         //return $this->redirectToRoute('fos_user_security_login');
     }
@@ -101,6 +79,70 @@ class UserController extends Controller
             return new JsonResponse(array('formation' => json_encode($payload)));
 
         }
+
+    }
+
+
+    /**
+ * @Route("/user/profile", name="myprofile", methods="GET")
+ */
+    public function  monprofil(){
+        if ($this->getUser()->getRoles()[0] == "ROLE_USER") {
+            $requestStack = $this->get('request_stack');
+            $maseterResquest = $requestStack->getMasterRequest();
+            $route = null;
+            if ($maseterResquest) {
+                $route = $maseterResquest->attributes->get('_route');
+            }
+
+            $user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser()->getId());
+            return $this->render('user/monprofile.html.twig', array('user' => $user, 'route' => $route));
+        }
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
+    }
+
+
+    /**
+     * @Route("/user/formation", name="userformation", methods="GET")
+     */
+    public function  vrformation(){
+        if ($this->getUser()->getRoles()[0] == "ROLE_USER") {
+            $requestStack = $this->get('request_stack');
+            $maseterResquest = $requestStack->getMasterRequest();
+            $route = null;
+            if ($maseterResquest) {
+                $route = $maseterResquest->attributes->get('_route');
+            }
+
+            $user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser()->getId());
+            $formation = $this->getDoctrine()->getRepository(Formation::class)->findAll();
+            return $this->render('user/nosformation.html.twig', array('user' => $user, 'route' => $route,'formations' => $formation ));
+        }
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
+    }
+
+
+    /**
+     * @Route("/user/byformation/{id}", name="oneformation", methods="GET")
+     */
+    public function  oneformation(Request $request){
+
+            $requestStack = $this->get('request_stack');
+            $maseterResquest = $requestStack->getMasterRequest();
+            $route = null;
+            if ($maseterResquest) {
+                $route = $maseterResquest->attributes->get('_route');
+            }
+
+            $user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser()->getId());
+            $formation = $this->getDoctrine()->getRepository(Formation::class)->find($request->get('id'));
+            return $this->render('user/nosformation.html.twig', array('user' => $user, 'route' => $route,'formation' => $formation ));
 
     }
 

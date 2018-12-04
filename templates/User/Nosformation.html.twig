@@ -1,4 +1,4 @@
-{% extends 'layoutadmin.html.twig' %}
+{% extends 'layoutuser.html.twig' %}
 {% block body %}
 
     <div class="panel-header panel-header-sm">
@@ -8,40 +8,35 @@
             <div class="col-md-4">
                 <div class="card card-user">
                     <div class="card-header">
-                        <h5 class="title">Liste des formation</h5>
+                        <h5 class="title">Mes Formation en cour</h5>
                     </div>
 
                     <div class="card-body">
-                        {% for formation in formations %}
-                            {% for  img in formation.contenuImg  %}
-                            <div class="row user" onclick="showformation({{ formation.idformation }})">
-                                <div class="col-md-4" style="margin-top: 5%;">
-                                    <img class="img-responsive" src="{{ img.urlImage}}">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="text-left text-uppercase" style="margin-top: 5%;"> <span class="text-capitalize">Nom :  {{ formation.nomFormation }}  </span></p>
-                                    Description :  {{ formation.description }}<br>
-                                    Date de la Publication :  {{ formation.dateDePublication|date("d/m/Y") }} </p>
-                                </div>
-                            </div>
+                            {% for formation in formations %}
+                                {% for  img in formation.contenuImg  %}
+                                    <div class="row user" onclick="showformation({{ formation.idformation }})">
+                                        <div class="col-md-4" style="margin-top: 5%;">
+                                            <img class="img-responsive" src="{{ img.urlImage}}">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="text-left text-uppercase" style="margin-top: 5%;"> <span class="text-capitalize">Nom :  {{ formation.nomFormation }}  </span></p>
+                                            Description :  {{ formation.description }}<br>
+                                            Date de la Publication :  {{ formation.dateDePublication|date("d/m/Y") }} </p>
+                                        </div>
+                                    </div>
                                 {% endfor %}
-                            <hr>
-                        {% endfor %}
+                                <hr>
+                            {% endfor %}
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="title">Edit formation</h5>
+                        <h5 class="title" id="nomformation"></h5>
                     </div>
                     <div class="card-body">
                         <form>
-                            <div class="row">
-                                <div class="col-md-12 align-content-md-center">
-                                    <h4 id="nomformation" class="text-center"></h4>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <img class="img-responsive" id="imgformation" src="">
@@ -52,7 +47,7 @@
                                 <div class="col-md-12">
                                     <p id="info"></p>
                                 </div>
-                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -63,8 +58,8 @@
     <script>
         function showformation(id) {
 
-            $.ajax({url: "formation/"+id , success: function(result){
-                    var item = JSON.parse(result.formation);
+            $.ajax({url: "byformation/"+id , success: function(result){
+                    var item = JSON.parse(result.user);
                     console.log(item);
                     document.getElementById("imgformation").src = item.Urlimage;
                     document.getElementById("nomformation").innerText = item.nom;

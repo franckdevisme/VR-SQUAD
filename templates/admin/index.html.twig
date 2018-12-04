@@ -24,7 +24,16 @@
                         </div>
                         <div class="card-body">
                             <div class="chart-area">
-                                <canvas id="lineChartExample"></canvas>
+                                {% for key, item in ROLEFORMATEUR %}
+                                    <div class="row m-1">
+                                            <div class="col-md-2 col-md-offset-1">
+                                               <img src="{{ item.avater  }}" class="img-responsive" />
+                                            </div>
+                                            <div class="col-md-6 clearfix">
+                                                {{ item.nom }} {{ item.prenom }}
+                                            </div>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="card-footer">
@@ -53,7 +62,16 @@
                         </div>
                         <div class="card-body">
                             <div class="chart-area">
-                                <canvas id="lineChartExampleWithNumbersAndGrid"></canvas>
+                                {% for key, item in ROLEUSER %}
+                                    <div class="row m-1">
+                                        <div class="col-md-2 col-md-offset-1">
+                                            <img src="{{ item.avater  }}" class="img-responsive" />
+                                        </div>
+                                        <div class="col-md-6 clearfix">
+                                            {{ item.nom }} {{ item.prenom }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="card-footer">

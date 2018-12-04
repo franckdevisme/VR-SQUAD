@@ -31,7 +31,25 @@ class AdminController extends Controller
             if ($maseterResquest) {
                 $route = $maseterResquest->attributes->get('_route');
             }
-            return $this->render('admin/index.html.twig', array('route' => $route));
+
+            $query = $this->getDoctrine()->getEntityManager()
+                ->createQuery(
+                    'SELECT u FROM App:User u WHERE u.roles LIKE :role'
+                )->setParameter('role', '%"ROLE_FORMATEUR"%'
+                );
+            $usersFormateur = $query->getResult();
+
+            $query = $this->getDoctrine()->getEntityManager()
+                ->createQuery(
+                    'SELECT u FROM App:User u WHERE u.roles NOT LIKE :role'
+                )->setParameter('role', '%"ROLE_FORMATEUR"%'
+                );
+            $users = $query->getResult();
+
+            $formation = $this->getDoctrine()->getRepository(Formation::class)->findAll();
+
+
+            return $this->render('admin/index.html.twig', array('route' => $route, 'ROLEFORMATEUR' => $usersFormateur, 'ROLEUSER' => $users));
         }
         else {
             return $this->redirectToRoute('fos_user_security_login');
@@ -84,7 +102,8 @@ class AdminController extends Controller
         else {
             return $this->redirectToRoute('fos_user_security_login');
         }
-    }/**
+    }
+    /**
      * @Route("/admin/formation", name="listformation", methods="GET")
      */
     public function  lstformation(){
@@ -102,6 +121,8 @@ class AdminController extends Controller
             return $this->redirectToRoute('fos_user_security_login');
         }
     }
+
+
 
     /**
      * @Route("/admin/profile", name="monprofile", methods="GET")
@@ -151,6 +172,35 @@ class AdminController extends Controller
             return $this->redirectToRoute('fos_user_security_login');
         }
     }
+
+    /**
+     * @Route("/admin/formation/{id}", name="formation", methods="GET")
+     */
+    public function  findOneFormation(Request $request){
+
+            if ($request->isXmlHttpRequest()) {
+                $id = $request->get('id');
+                dump($id);
+                $formation = $this->getDoctrine()->getRepository(Formation::class)->find($id);
+                $payload['nom'] = $formation->getNomformation();
+                $payload['Date'] = $formation->getDateDePublication();
+                $payload['Description'] = $formation->getDescription();
+                foreach ($formation->getContenutext() as $item) {
+                    $payload['text'] = $item->getText();
+                    $payload['titre'] = $item->getTitre();
+                }
+                foreach ($formation->getContenuImg() as $item) {
+                    $payload['Urlimage'] = $item->getUrlimage();
+                }
+
+
+
+                return new JsonResponse(array('formation' => json_encode($payload)));
+            }
+            return $this->render('admin/lstformation.html.twig');
+
+    }
+
 
 
 }
